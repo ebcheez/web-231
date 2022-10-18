@@ -1,2 +1,5 @@
-# web-231
-weekly course assignments
+# WEB 231 Enterprise JavaScript I
+## Contributors
+- Richard Krasso
+- Eric McCool
+
