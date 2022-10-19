@@ -1,0 +1,36 @@
+/*
+===========================================
+; Title: Assignment 1.3
+; Author: Professor Krasso
+; Date: 19 October 2022
+; Modified by: Eric McCool
+; Description: This is the landing page
+;   style sheet for Web-231 course work 
+;   with links to each assignment, 
+;   project, and other external links used.
+===========================================
+*/
+
+body {
+    font-family: 'Oswald', Arial, sans-serif;
+}
+#container {
+    margin: 50px 100px 0 100px;
+}
+h1, h2, h3, h4 {
+    background-color: #3c275a;
+    color: #fff;
+    border: 1px solid #d6a800;
+    padding: 10px;
+}
+a {
+    color: #3c275a;
+    text-decoration: none;
+}
+a:hover {
+    background-color: #d6a800;
+    color: 4f3674;
+}
+a:visited {
+    color: #3c275a;
+}
