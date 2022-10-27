@@ -10,6 +10,11 @@ web231 assignments.
 =============================
 */
 
+/* create body elements */
+body {
+    font-family: 'Oswald', Arial, sans-serif;}
+
+/* create card styles */
 .card {
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
     transition: 0.3s;}
@@ -23,6 +28,7 @@ web231 assignments.
 .card:hover {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);}
 
+/* create button styles */
 .btn {
     border: none;
     text-align: center;
@@ -40,6 +46,7 @@ web231 assignments.
     background-color: #d6a800;
     color: #4f3674;}
 
+/* create input-box styles */
 .input {
     padding: 12px 20px;
     margin: 8px 0;
@@ -51,6 +58,7 @@ web231 assignments.
 .full-width {
     width: 100%;}
 
+/* create form styles */
 .form {
     display: inline-grid;
     grid-template-columns: auto;}
