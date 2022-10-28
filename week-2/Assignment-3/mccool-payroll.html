@@ -1,0 +1,125 @@
+<!--
+========================================================
+; Title: Assignment 2.3 - Values and Variables
+; Author: Professor Krasso
+; Date: 28 October 2022
+; Modified by: Eric McCool
+; Description: This is Assignment 2.3 for week 2. 
+;   Create a payroll system - Halloween edition. 
+========================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import the site.css and global.css styles from two levels up. -->
+    <link rel="stylesheet" href="../../site.css" type="text/css">
+    <link rel="stylesheet" href="../../global.css" type="text/css">
+    <!-- import the course standard font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    <title>WEB 231 - Enterprise JavaScript I</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="payroll-header">Payroll System</h1>
+
+        <!-- There is one <div> for each employee to hold employee data. -->
+        <div id="employee-record-1">
+            <h3>Employee Record 1</h3>
+            <ul>
+                <li id="txtFirstName-E1"></li>
+                <li id="txtLastName-E1"></li>
+                <li id="txtAddress-E1"></li>
+                <li id="txtHireDate-E1"></li>
+                <li id="txtPayRate-E1"></li>
+            </ul>
+        </div>
+
+        <div id="employee-record-2">
+            <h3>Employee Record 2</h3>
+            <ul>
+                <li id="txtFirstName-E2"></li>
+                <li id="txtLastName-E2"></li>
+                <li id="txtAddress-E2"></li>
+                <li id="txtHireDate-E2"></li>
+                <li id="txtPayRate-E2"></li>
+            </ul>
+        </div>
+
+        <div id="employee-record-3">
+            <h3>Employee Record 3</h3>
+            <ul>
+                <li id="txtFirstName-E3"></li>
+                <li id="txtLastName-E3"></li>
+                <li id="txtAddress-E3"></li>
+                <li id="txtHireDate-E3"></li>
+                <li id="txtPayRate-E3"></li>
+            </ul>
+        </div>
+
+        <!-- This link returns to the course landing page showing assignments, projects, and important links. -->
+        <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
+
+
+        <script>
+            // Employee 1 data (E1).
+            let firstName_E1 = "Freddy";
+            let lastName_E1 = "Kruger";
+            let address_E1 = "666 Hell Hwy";
+            let hireDate_E1 = new Date().toLocaleDateString("en-US");
+            let payRate_E1 = 15.00;
+            let fixedPay_E1 = payRate_E1.toFixed(1);
+
+            // Bind the employee data to the list items.
+            // Employee 1 (E1).
+            document.getElementById("txtFirstName-E1").innerHTML = firstName_E1;
+            document.getElementById("txtLastName-E1").innerHTML = lastName_E1;
+            document.getElementById("txtAddress-E1").innerHTML = address_E1;
+            document.getElementById("txtHireDate-E1").innerHTML = hireDate_E1;
+            document.getElementById("txtPayRate-E1").innerHTML = fixedPay_E1;
+
+            // =================================================================
+
+            // Employee 2 data (E2).
+            let firstName_E2 = "Michael";
+            let lastName_E2 = "Meyers";
+            let address_E2 = "360 Murder Way";
+            let hireDate_E2 = new Date().toLocaleDateString("en-US");
+            let payRate_E2 = 12.50;
+            let fixedPay_E2 = payRate_E2.toFixed(1);
+
+            // Bind the employee data to the list items.
+            // Employee 2 (E2).
+            document.getElementById("txtFirstName-E2").innerHTML = firstName_E2;
+            document.getElementById("txtLastName-E2").innerHTML = lastName_E2;
+            document.getElementById("txtAddress-E2").innerHTML = address_E2;
+            document.getElementById("txtHireDate-E2").innerHTML = hireDate_E2;
+            document.getElementById("txtPayRate-E2").innerHTML = fixedPay_E2;
+
+            // =================================================================
+
+            // Employee 3 data (E3).
+            let firstName_E3 = "Jason";
+            let lastName_E3 = "Voorhees";
+            let address_E3 = "720 Killers Place";
+            let hireDate_E3 = new Date().toLocaleDateString("en-US");
+            let payRate_E3 = 17.50;
+            let fixedPay_E3 = payRate_E3.toFixed(1);
+
+            // Bind the employee data to the list items.
+            // Employee 3 (E3).
+            document.getElementById("txtFirstName-E3").innerHTML = firstName_E3;
+            document.getElementById("txtLastName-E3").innerHTML = lastName_E3;
+            document.getElementById("txtAddress-E3").innerHTML = address_E3;
+            document.getElementById("txtHireDate-E3").innerHTML = hireDate_E3;
+            document.getElementById("txtPayRate-E3").innerHTML = fixedPay_E3;
+
+        </script>
+    </div>
+</body>
