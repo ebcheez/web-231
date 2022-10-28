@@ -31,35 +31,31 @@
 </head>
 
 <body>
-    <h1>Exercise 2.2 - Hello JavaScript</h1>
+    <div id="container">
+        <h1>Exercise 2.2 - Hello JavaScript</h1>
 
-    <!-- Create a button that creates a JS alert box telling you the course I am taking. -->
-    <button type="button" id="btnMyCourse">What course am I taking?</button>
+        <!-- Create a button that creates a JS alert box telling you the course I am taking. -->
+        <button type="button" id="btnMyCourse">What course am I taking?</button>
 
-    <!-- I will insert text into this paragraph with a script. -->
-    <p id="txtMyWorld"></p>
+        <!-- Insert text into this paragraph with a script. -->
+        <p id="txtMyWorld"></p>
 
-    <!-- This link returns us to my course landing page showing assignments, projects, and important links. -->
-    <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
+        <!-- This link returns to the course landing page showing assignments, projects, and important links. -->
+        <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
 
-    <script>
+        <script>
+            // declare a constant and assign it the value of the button
+            const CLICKED = document.getElementById("btnMyCourse");
 
-        // This is the script that will fill the above paragraph with the text seen below.
-        document.getElementById("txtMyWorld").innerHTML = "Welcome to McCool's world!"
+            // use the event listener method on the constant, listen for the click and call the function
+            CLICKED.addEventListener("click", fncButton);
 
-        // This is the script and function that will create an alert box telling you which course I am taking.
-        // First, declare a const identified as CLICKED and initialize it with the value of 'btnMyCourse.'
-        const CLICKED = document.getElementById("btnMyCourse");
-        // Then use the compact way to create and call a function when the button is clicked on.
-        CLICKED.addEventListener("click", function() {
-            document.getElementById("btnMyCourse").innerHTML = alert("WEB 231 - Enterprise JavaScript I");
-        });
-
-        // One fix is needed. When I x out of the alert window, my button text becomes undefined, but it still works. 
-        // I will try a string literal to replace the text, but I don't think that will work either.
-        // No, it did not work.
-
-    </script>    
-
+            // this function replaces the blank paragraph and creates an alert box    
+            function fncButton(){
+                document.getElementById("txtMyWorld").innerHTML = "Welcome to McCool's world!";
+                alert("WEB 231 - Enterprise JavaScript I");
+            }
+        </script>    
+    </div>
 </body>
 </html>
