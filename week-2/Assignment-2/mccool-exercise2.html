@@ -44,17 +44,18 @@
         <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
 
         <script>
-            // declare a constant and assign it the value of the button
+            // Declare a constant and assign it the value of the button - I think this would be a boolean value.
             const CLICKED = document.getElementById("btnMyCourse");
 
-            // use the event listener method on the constant, listen for the click and call the function
+            // Use the event listener method on the constant. 2 parameters - listen for the click and call the function.
             CLICKED.addEventListener("click", fncButton);
 
-            // this function replaces the blank paragraph and creates an alert box    
+            // This function replaces the blank paragraph and creates an alert box.    
             function fncButton(){
                 document.getElementById("txtMyWorld").innerHTML = "Welcome to McCool's world!";
                 alert("WEB 231 - Enterprise JavaScript I");
             }
+            // I had used the compact version shown in W3S. This version offers a more linear explanation.
         </script>    
     </div>
 </body>
