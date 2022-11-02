@@ -64,8 +64,10 @@
 
         <!-- Perform the calc and return the value. -->
         <script>
+            // I did not incorporate the function in this line with .onclick = convertTemp() {
             document.getElementById("btnConvert").onclick = convertTemp;
-
+            
+            // It looks sexier with the function independent and is easier to read I think.
             function convertTemp() {
                 // Assign value to fahrenheit and convert to celsius
                 let fahrenheit = document.getElementById("txtFahrenheit").value;
