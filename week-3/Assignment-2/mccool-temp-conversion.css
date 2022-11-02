@@ -24,37 +24,31 @@
 /* adjust the container to narrow the cards and align the return link */
 #container {
     width: 600px;
-    margin: auto;
-}
+    margin: auto;}
 
 /* Adjust the app-header */
 .app-header {
     text-align: center;
     font-weight: 400;
-    margin: 20px auto 40px auto;
-}
+    margin: 20px auto 40px auto;}
 
 /* Add some space between the card title and input box */
 #txtFahrenheit {
-    margin-top: 40px;
-}
+    margin-top: 40px;}
 
 /* Adjust the button */
 .btn {
     border-radius: 5px;
     width: 345px;
     margin-top: 40px;
-    margin-bottom: 20px;
-}
+    margin-bottom: 20px;}
 
 /* center the output and make it big */
 #txtCelsiusOutput {
     text-align: center;
     font-size: 28px;
-    margin-top: 0px;
-}
+    margin-top: 0px;}
 
 /* Add some space between the cards */
 .card {
-    margin-bottom: 40px;
-}
+    margin-bottom: 40px;}
