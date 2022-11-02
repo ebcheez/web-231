@@ -21,6 +21,7 @@
     box-sizing: border-box;
 }
 
+/* adjust the container to narrow the cards and align the return link */
 #container {
     width: 600px;
     margin: auto;
@@ -30,7 +31,7 @@
 .app-header {
     text-align: center;
     font-weight: 400;
-    margin-bottom: 40px;
+    margin: 20px auto 40px auto;
 }
 
 /* Add some space between the card title and input box */
