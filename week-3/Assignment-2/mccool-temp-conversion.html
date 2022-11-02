@@ -48,22 +48,19 @@
                     <input type="text" name="txtFahrenheit" id="txtFahrenheit" class="input" value="">
                     <button class="btn btn-primary" id="btnConvert">Convert Temperature</button>
                 </div>
-            </div>
+            </div><!-- End of the input card.-->
 
             <!-- This is the output card. -->
             <div class="card">
                 <div class="card-title">Conversion Results</div>
                 <p id="txtCelsiusOutput"></p>
-            </div>
+            </div><!-- End of the output card. -->
 
-            <div id="return-link">
-                <!-- This link returns to the course landing page showing assignments, projects, and important links. -->
+            <div id="return-link"><!-- Return to the course landing page. -->
                 <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
             </div>
     
         </div><!-- End of the get-value <div>. -->
-
-
 
         <!-- Perform the calc and return the value. -->
         <script>
@@ -75,9 +72,8 @@
                 let celsius = ((parseFloat(fahrenheit) - 32) / 1.8).toFixed(2);
                 document.getElementById("txtCelsiusOutput").innerHTML = celsius;
             }
-        </script>
+        </script><!-- End of the calcs and display celsius script. -->
+
     </div><!-- End of the container <div> -->
-
-
 </body>
 </html>
