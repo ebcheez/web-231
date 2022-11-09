@@ -56,11 +56,12 @@
                 <p id="txtResults"></p>
             </div><!-- End of the output card. -->
 
-            <div id="return-link"><!-- Return to the course landing page. -->
-                <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
-            </div>
-    
         </div><!-- End of the get-value <div>. -->
+
+        <div id="return-link"><!-- Return to the course landing page. -->
+            <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
+        </div>
+
 
         <!-- Create a random number, perform the comparison, and return the appropriate message. -->
         <script>
@@ -75,7 +76,7 @@
                 // Assign the user input to the variable myNumber.
                 let myNumber = document.getElementById("txtMyNumber").value;
 
-                // I have added a simple if statement using multiple conditions with 'or' to validate 
+                // I have added a simple 'if' statement using multiple conditions with 'or' to validate 
                 // the user has entered a proper guess. Next time I may use the try/catch statements.
                 if (myNumber < 1 || myNumber > 10 || isNaN(myNumber)) {
                     document.getElementById("txtResults").innerHTML = "Choose a Valid Number"
@@ -89,9 +90,9 @@
                 } else {
                     document.getElementById("txtResults").innerHTML = "Congratulations! You picked the correct number!"
                 }
-               }
+            } // End of the function.
             
-        </script><!-- End of the calcs and display celsius script. -->
+        </script><!-- End of the random number, comparison, and message script. -->
 
     </div><!-- End of the container <div> -->
 </body>
