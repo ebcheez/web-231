@@ -70,13 +70,18 @@
             // Call the compareNumber function when the submit button is selected.
             document.getElementById("btnSubmit").onclick = compareNumber;
             
-            // The compare function with input validation.
+            // This is the compare function with input validation.
             function compareNumber() {
+                // Assign the user input to the variable myNumber.
                 let myNumber = document.getElementById("txtMyNumber").value;
-                // Use a simple if statement using multiple conditions with 'or' to validate the user has
-                // entered a proper guess.
+
+                // I have added a simple if statement using multiple conditions with 'or' to validate 
+                // the user has entered a proper guess. Next time I may use the try/catch statements.
                 if (myNumber < 1 || myNumber > 10 || isNaN(myNumber)) {
                     document.getElementById("txtResults").innerHTML = "Choose a Valid Number"
+
+                // These conditional statements compare the valid input against the random number and
+                // respond appropriately.
                 } else if (myNumber < rnd) {
                     document.getElementById("txtResults").innerHTML = "The number is greater than " + myNumber;
                 } else if (myNumber > rnd) {
