@@ -38,7 +38,7 @@
         <h1 class="app-header">Welcome to the Sequence Game!</h1>
 
         <!-- Get the number to compare from the user. -->
-        <div id="get-value">
+        <div id="get-sequence">
 
             <!-- This is the input card. -->
             <div class="card">
@@ -61,7 +61,7 @@
                 <p id="txtSequenceResults"></p>
             </div><!-- End of the output card. -->
 
-        </div><!-- End of the get-value <div>. -->
+        </div><!-- End of the get-sequence <div>. -->
 
         <div id="return-link"><!-- Return to the course landing page. -->
             <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
@@ -70,36 +70,11 @@
     </div><!-- End of the container <div> -->
 
 
-    <!-- Create a random number, perform the comparison, and return the appropriate message. -->
+    <!-- Create a sequence of numbers according to the user choice: fibonacci, even, or odd numbers. -->
     <script>
-        // Generate a random number between 1 and 10.
-        const rnd = Math.floor((Math.random() * 10) + 1);
 
-        // Call the compareNumber function when the submit button is selected.
-        document.getElementById("btnSubmit").onclick = compareNumber;
         
-        // This is the compare function with input validation.
-        function compareNumber() {
-            // Assign the user input to the variable myNumber.
-            let myNumber = document.getElementById("txtMyNumber").value;
-
-            // I have added a simple 'if' statement using multiple conditions with 'or' to validate 
-            // the user has entered a proper guess. Next time I may use the try/catch statements.
-            if (myNumber < 1 || myNumber > 10 || isNaN(myNumber)) {
-                document.getElementById("txtResults").innerHTML = "Choose a Valid Number"
-
-            // These conditional statements compare the valid input against the random number and
-            // respond appropriately.
-            } else if (myNumber < rnd) {
-                document.getElementById("txtResults").innerHTML = "The number is greater than " + myNumber;
-            } else if (myNumber > rnd) {
-                document.getElementById("txtResults").innerHTML = "The number is less than " + myNumber;
-            } else {
-                document.getElementById("txtResults").innerHTML = "Congratulations! You picked the correct number!"
-            }
-        } // End of the compare function.
-        
-    </script><!-- End of the random number, comparison, and message script. -->
+    </script><!-- End of the sequence generating script. -->
 
 </body>
 </html>
