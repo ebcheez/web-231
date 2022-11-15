@@ -31,7 +31,7 @@
     margin: 20px auto 40px auto;}
 
 /* Add some space between the card title and input box */
-#txtMyNumber {
+#txtMyChoice {
     margin-top: 40px;}
 
 /* Adjust the button */
@@ -42,7 +42,7 @@
     margin-bottom: 20px;}
 
 /* center the output and make it big */
-#txtResults {
+#txtSequenceResults {
     text-align: center;
     font-size: 28px;
     margin-top: 0px;}
