@@ -97,7 +97,7 @@
                         dividend++;   
                     } else {
                         if (dividend % divisor == zero) {
-                            resultString = resultString + dividend;
+                            resultString = resultString.concat(", ", dividend);
                             dividend++;
                         }
                     }      
