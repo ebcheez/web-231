@@ -21,7 +21,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Import the global.css styles from two levels up. -->
     <link rel="stylesheet" href="../../global.css" type="text/css">
@@ -82,11 +81,12 @@
             const zero = 0;
             const one = 1;
             const divisor = 2;
-            let dividend = 1;
             const ceiling = 20;
-            let resultString = " ";
+            let dividend = 1;
+            let resultString = "";
             // Assign the user choice to the variable choice
             let choice = document.getElementById("sequence").value;
+            console.log(choice);
 
             // Compare the choice. If it is select, output an alert
             if (choice == "select") {
@@ -94,24 +94,20 @@
             } else if (choice == "even") {
                 do {
                     if (dividend == one) {
-                        dividend++;   
+                        dividend++; 
+                        console.log(dividend);
+
                     } else if (dividend % divisor == zero) {
                             resultString = resultString.concat(", ", dividend);
                             dividend++;
+                            console.log(dividend);
                     }
                 }
                 while (dividend < ceiling);
                 document.getElementById("txtSequenceResults").innerHTML = resultString;
+                console.log(resultString);
             } 
         }
-
-        
-
-
-        
-        
-
-        
     </script><!-- End of the sequence generating script. -->
 
 </body>
