@@ -79,34 +79,37 @@
 
         // This is the compare function with input validation
         function compareChoice () {
+            const zero = 0;
+            const one = 1;
+            const divisor = 2;
+            let dividend = 1;
+            const ceiling = 20;
+            let resultString = " ";
             // Assign the user choice to the variable choice
             let choice = document.getElementById("sequence").value;
 
             // Compare the choice. If it is select, output an alert
             if (choice == "select") {
                 alert("Invalid selection, please try again!");
-
-            // Compare the valid choice to determine the process and display the appropriate results.    
-               
             } else if (choice == "even") {
-                let isEven = 0;
-                let divisor = 2;
-                let iterator = 0;
-                let ceiling = 21;
-                let modulus = 0;
-                let resultString = "";
-
                 do {
-                    if (iterator % divisor == 0) {
-                        resultString += iterator + ", "; 
-                        iterator ++;   
-                    }       
+                    if (dividend == one) {
+                        dividend++;   
+                    } else {
+                        if (dividend % divisor == zero) {
+                            resultString = resultString + dividend;
+                            dividend++;
+                        }
+                    }      
                 } 
-                while (iterator < ceiling);
-
-                document.getElementById("txtSequenceResults").innerHTML = resultString;
+                while (dividend < ceiling);
             }
+            document.getElementById("txtSequenceResults").innerHTML = resultString;
+
         }
+
+
+        
         
 
         
