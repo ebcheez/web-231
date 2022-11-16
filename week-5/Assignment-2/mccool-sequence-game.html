@@ -103,15 +103,12 @@
                 while (dividend < ceiling);
 
             } else if (choice == "odd"){
-                for (i = 1; i < ceiling; i++){
-                    if (i % divisor == one){
-                        resultString += i + ", ";
+                for (; dividend < ceiling; dividend++){
+                    if (dividend % divisor == one){
+                        resultString += dividend + ", ";
                     }
                 }
             }
-
-            
-
             resultSliced = resultString.slice(0, -2);
             document.getElementById("txtSequenceResults").innerHTML = resultSliced; 
         }
