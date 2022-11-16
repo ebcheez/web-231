@@ -78,12 +78,16 @@
 
         // This is the compare function with input validation
         function compareChoice () {
-            // Create scoped variables for every sequence to use. This eliminates magic numbers.
+            // Create scoped variables for any sequence to use. This eliminates magic numbers.
             const zero = 0;
             const one = 1;
             const divisor = 2;
             const ceiling = 20;
+            const fibCeiling = 40;
             let dividend = 1;
+            let fib1 = 0;
+            let fib2 = 1;
+            let fibNext;
             let resultString = "";
             let resultSliced = "";
             // Assign the user choice to the variable 'choice'
@@ -93,6 +97,16 @@
             if (choice == "select") {
                 alert("Invalid selection, please try again!");
 
+            // Run a Fibonacci sequence less than 40.    
+            } else if (choice == "fibonacci"){
+                while(fib1 < fibCeiling){
+                    resultString += fib1 + ", ";
+                    fibNext = fib1 + fib2;
+                    fib1 = fib2;
+                    fib2 = fibNext;
+                }
+
+            // Run an even number sequence less than 20.
             } else if (choice == "even") {
                 do {
                     if (dividend % divisor == zero){
@@ -102,6 +116,7 @@
                 }
                 while (dividend < ceiling);
 
+            // Run an odd number sequence less than 20.
             } else if (choice == "odd"){
                 for (; dividend < ceiling; dividend++){
                     if (dividend % divisor == one){
@@ -109,9 +124,12 @@
                     }
                 }
             }
+            
+            // Slice the comma and space off the end of the results and display the sequence.
             resultSliced = resultString.slice(0, -2);
-            document.getElementById("txtSequenceResults").innerHTML = resultSliced; 
-        }
+            document.getElementById("txtSequenceResults").innerHTML = resultSliced;
+
+        } // End of the compareChoice function.
     </script><!-- End of the sequence generating script. -->
 
 </body>
