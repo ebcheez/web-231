@@ -44,7 +44,8 @@
             <div class="card">
                 <div class="card-title">Sequence Selection Form</div>
                 <div class="card-content">
-                    <label for="txtMyChoice">Choose a number sequence:</label>
+                    <label for="txtMyChoice" id="txtMyChoice">Choose a number sequence:</label>
+                    <!-- Create the drop-down-menu options -->
                     <select name="txtMyChoice" id="sequence" class="drop-down-menu">
                         <option value="select">--Select--</option>
                         <option value="fibonacci">Fibonacci Sequence</option>
@@ -124,7 +125,7 @@
                     }
                 }
             }
-            
+
             // Slice the comma and space off the end of the results and display the sequence.
             resultSliced = resultString.slice(0, -2);
             document.getElementById("txtSequenceResults").innerHTML = resultSliced;
