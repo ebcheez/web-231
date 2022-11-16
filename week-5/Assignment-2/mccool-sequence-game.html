@@ -84,6 +84,7 @@
             const ceiling = 20;
             let dividend = 1;
             let resultString = "";
+            let resultSliced = "";
             // Assign the user choice to the variable choice
             let choice = document.getElementById("sequence").value;
             console.log(choice);
@@ -91,22 +92,18 @@
             // Compare the choice. If it is select, output an alert
             if (choice == "select") {
                 alert("Invalid selection, please try again!");
+
             } else if (choice == "even") {
                 do {
-                    if (dividend == one) {
-                        dividend++; 
-                        console.log(dividend);
-
-                    } else if (dividend % divisor == zero) {
-                            resultString = resultString.concat(", ", dividend);
-                            dividend++;
-                            console.log(dividend);
+                    if (dividend % divisor == zero){
+                        resultString += dividend + ", ";
                     }
+                    dividend++;
                 }
                 while (dividend < ceiling);
-                document.getElementById("txtSequenceResults").innerHTML = resultString;
-                console.log(resultString);
-            } 
+            }
+            resultSliced = resultString.slice(0, -2);
+            document.getElementById("txtSequenceResults").innerHTML = resultSliced; 
         }
     </script><!-- End of the sequence generating script. -->
 
