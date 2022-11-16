@@ -95,18 +95,17 @@
                 do {
                     if (dividend == one) {
                         dividend++;   
-                    } else {
-                        if (dividend % divisor == zero) {
+                    } else if (dividend % divisor == zero) {
                             resultString = resultString.concat(", ", dividend);
                             dividend++;
-                        }
-                    }      
-                } 
+                    }
+                }
                 while (dividend < ceiling);
-            }
-            document.getElementById("txtSequenceResults").innerHTML = resultString;
-
+                document.getElementById("txtSequenceResults").innerHTML = resultString;
+            } 
         }
+
+        
 
 
         
