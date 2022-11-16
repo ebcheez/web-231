@@ -103,9 +103,9 @@
                 while (dividend < ceiling);
 
             } else if (choice == "odd"){
-                for (; dividend < ceiling; dividend++){
-                    if (dividend % divisor == one){
-                        resultString += dividend + ",";
+                for (i = 1; i < ceiling; i++){
+                    if (i % divisor == one){
+                        resultString += i + ", ";
                     }
                 }
             }
