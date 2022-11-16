@@ -10,7 +10,8 @@
 ; Works Cited: Web 231 Assignment 5 - Sequence Game,
 ;              Web 231 Coding Guidelines,
 ;              Web 231 HTML, CSS, and JavaScript Requirements,
-;              W3Schools - JS select element,
+;              W3Schools - JS select element, loop while, loop do-while, loop
+;              for, strings, arrays, slice(),
 ;              Google Fonts. 
 ===============================================================================
 */
@@ -37,7 +38,7 @@
 /* Adjust the button */
 .btn {
     border-radius: 5px;
-    width: 350px;
+    width: 345px;
     margin-top: 40px;
     margin-bottom: 20px;}
 
