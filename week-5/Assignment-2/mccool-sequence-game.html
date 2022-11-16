@@ -12,7 +12,7 @@
 ;              Web 231 Coding Guidelines,
 ;              Web 231 HTML, CSS, and JavaScript Requirements,
 ;              W3Schools - JS select element, loop while, loop do-while, loop
-;              for, strings, arrays,
+;              for, strings, arrays, slice(),
 ;              Google Fonts.  
 ===============================================================================
 -->
@@ -78,6 +78,7 @@
 
         // This is the compare function with input validation
         function compareChoice () {
+            // Create scoped variables for every sequence to use. This eliminates magic numbers.
             const zero = 0;
             const one = 1;
             const divisor = 2;
@@ -85,7 +86,7 @@
             let dividend = 1;
             let resultString = "";
             let resultSliced = "";
-            // Assign the user choice to the variable choice
+            // Assign the user choice to the variable 'choice'
             let choice = document.getElementById("sequence").value;
 
             // Compare the choice. If it is select, output an alert
@@ -100,7 +101,17 @@
                     dividend++;
                 }
                 while (dividend < ceiling);
+
+            } else if (choice == "odd"){
+                for (; dividend < ceiling; dividend++){
+                    if (dividend % divisor == one){
+                        resultString += dividend + ",";
+                    }
+                }
             }
+
+            
+
             resultSliced = resultString.slice(0, -2);
             document.getElementById("txtSequenceResults").innerHTML = resultSliced; 
         }
