@@ -80,11 +80,11 @@
         // This is the compare function with input validation
         function compareChoice () {
             // Create scoped variables for any sequence to use. This eliminates magic numbers.
-            const zero = 0;
-            const one = 1;
-            const divisor = 2;
-            const ceiling = 20;
-            const fibCeiling = 40;
+            const ZERO = 0;
+            const ONE = 1;
+            const DIVISOR = 2;
+            const CEILING = 20;
+            const FIBCEILING = 40;
             let dividend = 1;
             let fib1 = 0;
             let fib2 = 1;
@@ -100,7 +100,7 @@
 
             // Run a Fibonacci sequence less than 40.    
             } else if (choice == "fibonacci"){
-                while(fib1 < fibCeiling){
+                while(fib1 < FIBCEILING){
                     resultString += fib1 + ", ";
                     fibNext = fib1 + fib2;
                     fib1 = fib2;
@@ -110,17 +110,17 @@
             // Run an even number sequence less than 20.
             } else if (choice == "even") {
                 do {
-                    if (dividend % divisor == zero){
+                    if (dividend % DIVISOR == ZERO){
                         resultString += dividend + ", ";
                     }
                     dividend++;
                 }
-                while (dividend < ceiling);
+                while (dividend < CEILING);
 
             // Run an odd number sequence less than 20.
             } else if (choice == "odd"){
-                for (; dividend < ceiling; dividend++){
-                    if (dividend % divisor == one){
+                for (; dividend < CEILING; dividend++){
+                    if (dividend % DIVISOR == ONE){
                         resultString += dividend + ", ";
                     }
                 }
