@@ -92,8 +92,7 @@
     </div><!-- End of the container <div> -->
 
 
-    <!-- Create two tables based on user choice, favorite books or favorite authors. 
-         Hide the table that is not selected. -->
+    <!-- Do a lot of JavaScript! Then do moar! Moar!! MOAR!! -->
     <script>
         // Create a header object and my 3 favorite books as objects in an array with ISBN, 
         // name, and pages so I can loop them.
@@ -103,6 +102,7 @@
             {"isbn": "0399131493", "title": "Red Storm Rising", "pages": "656"},
             {"isbn": "0261102214", "title": "The Hobbit", "pages": "400"}
         ];
+
         // Create a header object and my 3 favorite authors as objects in an array with 
         // name and genre so I can loop them.
         const authorHeader = {"name": "Name", "genre": "Genre"};
@@ -112,26 +112,26 @@
             {"name": "J.R.R. Tolkien", "genre": "Fantasy"}
         ];
 
-        // Call the compareChoice function when the Display Sequence button is selected
+        // Call the compareChoice function when the Display Listing button is selected.
         document.getElementById("btnDisplayListing").onclick = compareChoice; 
 
-        // This is the compare function with input validation
+        // This is the compare function with input validation.
         function compareChoice () {
 
-            // Assign the user choice to the variable 'choice'
+            // Assign the user choice to the variable 'choice'.
             let choice = document.getElementById("favoriteList").value;
 
-            // Compare the choice. If it is select, output an alert
+            // Compare the choice. If it is select, output an alert.
             if (choice === "select") {
                 alert("Invalid selection, please try again!");
 
-            // Display a table of favorite books
+            // Display a table of favorite books.
             } else if (choice === "books") {
                 let hideAuthors = document.getElementById('authorsCard');
                 hideAuthors.style.display = "none";
                 buildBooksTable(bookHeader, bookArray);
                 
-            // Display a table of favorite authors
+            // Display a table of favorite authors.
             } else if (choice === "authors") {
                 let hideBooks = document.getElementById('booksCard');
                 hideBooks.style.display = "none";
@@ -149,7 +149,7 @@
             let table = document.getElementById('booksBody');
 
             showBooks.style.display = "block";
-            table.innerHTML = ""; // Clear the table each time
+            table.innerHTML = ""; // Clear the table each time.
             title.innerHTML = "Top 3 Favorite Books";
 
             // Populate the table header with the bookHeader object.
@@ -158,7 +158,7 @@
                             <th>${head.title}</th>
                             <th>${head.pages}</th>
                           </tr>`
-                header.innerHTML = headRow;
+            header.innerHTML = headRow;
             
             // Populate each table row by looping through objects in the booksArray.
             for (let i = 0; i < data.length; i++) {
@@ -171,7 +171,8 @@
             }
         }
 
-        // This function builds the entire favorite authors card
+        // This function builds the entire favorite authors card.
+        // See comments in the above function for reference.
         function buildAuthorsTable(head, data) {
 
             let showAuthors = document.getElementById('authorsCard');
@@ -187,7 +188,7 @@
                                 <th>${head.name}</th>
                                 <th>${head.genre}</th>
                             </tr>`
-                table.innerHTML = headRow;
+            table.innerHTML = headRow;
 
             for (let i = 0; i < data.length; i++) {
                 let row = `<tr>
