@@ -1,18 +1,19 @@
 /*
 ===============================================================================
-; Title: Assignment 4 - Number Guessing Game
+; Title: Assignment 6 - in-n-out-books
 ; Author: Professor Krasso
-; Date: 9 November, 2022
+; Date: 26 November, 2022
 ; Modified by: Eric McCool
-; Description: This is the css file for Assignment 5.2. These styles
-;              are on top of the global.css file to match the user interface
-;              (final solution) shown in the assignment.  
-; Works Cited: Web 231 Assignment 5 - Sequence Game,
+; Description: This is Assignment 6.2 for week 6.
+;              Create two tables - authors, books from object literals.
+;              Display one or the other from a drop-down menu.
+;              Hide the table not being displayed.
+; Works Cited: Web 231 Assignment 6 - in-n-out-books,
 ;              Web 231 Coding Guidelines,
 ;              Web 231 HTML, CSS, and JavaScript Requirements,
-;              W3Schools - JS select element, loop while, loop do-while, loop
-;              for, strings, arrays, slice(),
-;              Google Fonts. 
+;              W3Schools - JS objects, JS how to JS toggle hide-show, for loop,
+;              arrays, object literals and JSON,
+;              Google Fonts.  
 ===============================================================================
 */
 
