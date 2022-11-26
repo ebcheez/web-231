@@ -5,7 +5,7 @@
 ; Date: 26 November, 2022
 ; Modified by: Eric McCool
 ; Description: This is Assignment 6.2 for week 6.
-;              Create two tables - authors, books from object literals.
+;              Create two tables - authors and books, from object literals.
 ;              Display one or the other from a drop-down menu.
 ;              Hide the table not being displayed.
 ; Works Cited: Web 231 Assignment 6 - in-n-out-books,
@@ -61,8 +61,7 @@
                 <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
             </div>
 
-            <!-- Create a div to hold the area where the cards will be displayed 
-                 so that it can be cleared. -->
+            <!-- Create a div to hold the area where the cards will be displayed -->
             <div id="displayDiv">
 
                 <!-- This is the favorite books output card. -->
@@ -160,7 +159,7 @@
                           </tr>`
             header.innerHTML = headRow;
             
-            // Populate each table row by looping through objects in the booksArray.
+            // Populate each table row by looping through objects in the array.
             for (let i = 0; i < data.length; i++) {
                 let row = `<tr>
                             <td>${data[i].isbn}</td>
