@@ -1,0 +1,53 @@
+/*
+===============================================================================
+; Title: Assignment 4 - Number Guessing Game
+; Author: Professor Krasso
+; Date: 9 November, 2022
+; Modified by: Eric McCool
+; Description: This is the css file for Assignment 5.2. These styles
+;              are on top of the global.css file to match the user interface
+;              (final solution) shown in the assignment.  
+; Works Cited: Web 231 Assignment 5 - Sequence Game,
+;              Web 231 Coding Guidelines,
+;              Web 231 HTML, CSS, and JavaScript Requirements,
+;              W3Schools - JS select element, loop while, loop do-while, loop
+;              for, strings, arrays, slice(),
+;              Google Fonts. 
+===============================================================================
+*/
+
+/* Use a border-box for every element */
+* {
+    box-sizing: border-box;}
+
+/* adjust the container to narrow the cards and align the return link */
+#container {
+    width: 600px;
+    margin: auto;}
+
+/* Adjust the app-header */
+.app-header {
+    text-align: center;
+    font-weight: 400;
+    margin: 20px auto 40px auto;}
+
+/* Add some space between the card title and input box */
+#txtMyChoice {
+    margin-top: 40px;}
+
+/* Adjust the button */
+.btn {
+    border-radius: 5px;
+    width: 345px;
+    margin-top: 40px;
+    margin-bottom: 20px;}
+
+/* center the output and make it big */
+#txtSequenceResults {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0px;}
+
+/* Add some space between the cards */
+.card {
+    margin-bottom: 40px;}
