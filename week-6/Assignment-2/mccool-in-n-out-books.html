@@ -68,9 +68,9 @@
                 <div class="card" id="booksCard">
                     <div class="card-title" id="books-title"></div>
                     <table class="table tableBooks">
-                        <thead id="booksHeader">
+                        <thead class="tableHeader" id="booksHeader">
                         </thead>
-                        <tbody id="booksBody">
+                        <tbody class="tableData" id="booksBody">
                         </tbody>
                     </table>
                 </div><!-- End of the favorite books output card. -->
@@ -79,9 +79,9 @@
                 <div class="card" id="authorsCard">
                     <div class="card-title" id="authors-title"></div>
                     <table class="table tableAuthors">
-                        <thead id="authorsHeader">
+                        <thead class="tableHeadeer" id="authorsHeader">
                         </thead>
-                        <tbody id="authorsBody">
+                        <tbody class="tableData" id="authorsBody">
                         </tbody>
                     </table>
                 </div><!-- End of the favorite authors output card. -->
@@ -93,8 +93,8 @@
 
     <!-- Do a lot of JavaScript! Then do moar! Moar!! MOAR!! -->
     <script>
-        // Create a header object and my 3 favorite books as objects in an array with ISBN, 
-        // name, and pages so I can loop them.
+        // Create header objects and my 3 favorite books and authors as objects in arrays 
+        // with ISBN, book name, pages, author, and genre so I can loop them.
         const bookHeader = {"isbn": "ISBN", "title": "Title", "pages": "Pages"};
         const bookArray = [
             {"isbn": "0399133143", "title": "The TommyKnockers", "pages": "544"},
@@ -102,8 +102,6 @@
             {"isbn": "0261102214", "title": "The Hobbit", "pages": "400"}
         ];
 
-        // Create a header object and my 3 favorite authors as objects in an array with 
-        // name and genre so I can loop them.
         const authorHeader = {"name": "Name", "genre": "Genre"};
         const authorArray = [
             {"name": "Stephen King", "genre": "Horror"},
