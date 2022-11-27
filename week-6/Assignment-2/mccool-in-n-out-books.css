@@ -51,10 +51,15 @@
 
 /* Add some space between the cards */
 .card {
-    margin-bottom: 40px;}
+    margin-bottom: 30px;}
+
+#authorsCard {
+    padding-top: 30px;
+}
 
 /* Adjust the table */
 .table {
+    border: 1px solid #ddd;
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 30px;}
@@ -65,9 +70,6 @@
     text-align: left;
     background-color: #4f3674;
     color: #fff;}
-
-.table.tableHeader, .table.tableData {
-    border: 1px solid #ddd;}
 
 tr:hover {
     background-color: #d6a800;
