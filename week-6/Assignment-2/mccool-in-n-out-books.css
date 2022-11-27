@@ -54,7 +54,7 @@
     margin-top: 30px;
     margin-bottom: 30px;}
 
-#authorsCard {
+#favoritesCard {
     margin-top: 30px;}
 
 /* Adjust the table */
@@ -63,14 +63,14 @@ table {
     width: 100%;
     margin: 0, 20px, 20px, 20px;}
 
-thead {
+.tableHeader {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: left;
     background-color: #4f3674;
     color: #fff;}
 
-thead, tbody {
+.tableHeader, .tableData {
     border: 1px solid #ddd;}
 
 tr:hover {

@@ -66,19 +66,19 @@
             <!-- Create a div to hold the area where the cards will be displayed -->
             <div id="displayDiv">
 
-                <!-- This is the favorite books output card. -->
-                <div class="card" id="booksCard">
-                    <div class="card-title" id="books-title"></div>
-                    <table class="table tableBooks">
-                        <thead class="tableHeader" id="booksHeader">
+                <!-- This is the favorites output card. -->
+                <div class="card" id="favoritesCard">
+                    <div class="card-title" id="favorites-title"></div>
+                    <table class="table tableFavorites">
+                        <thead class="tableHeader" id="favoritesHeader">
                         </thead>
-                        <tbody class="tableData" id="booksBody">
+                        <tbody class="tableData" id="favoritesBody">
                         </tbody>
                     </table>
-                </div><!-- End of the favorite books output card. -->
+                </div><!-- End of the favorites output card. -->
 
                 <!-- This is the favorite authors output card. -->
-                <div class="card" id="authorsCard">
+                <!-- <div class="card" id="authorsCard">
                     <div class="card-title" id="authors-title"></div>
                     <table class="table tableAuthors">
                         <thead class="tableHeader" id="authorsHeader">
@@ -86,7 +86,7 @@
                         <tbody class="tableData" id="authorsBody">
                         </tbody>
                     </table>
-                </div><!-- End of the favorite authors output card. -->
+                </div>End of the favorite authors output card. -->
 
             </div><!-- End of the displayDiv -->
         </div><!-- End of the get-favorite <div>. -->
@@ -116,25 +116,21 @@
 
         // This is the compare function with input validation.
         function compareChoice () {
-            let hideAuthors = document.getElementById('authorsCard');
-            let hideBooks = document.getElementById('booksCard');
+            let hideTable = document.getElementById('favoritesCard');
 
             // Assign the user choice to the variable 'choice'.
             let choice = document.getElementById("favoriteList").value;
 
-            // Compare the choice. If it is select, output an alert.
+            // Compare the choice. If it is select, hide the table.
             if (choice === "select") {
-                hideAuthors.style.display = "none";
-                hideBooks.style.display = "none";
+                hideTable.style.display = "none";
 
             // Display a table of favorite books.
             } else if (choice === "books") {
-                hideAuthors.style.display = "none";
                 buildBooksTable(bookHeader, bookArray);
                 
             // Display a table of favorite authors.
             } else if (choice === "authors") {
-                hideBooks.style.display = "none";
                 buildAuthorsTable(authorHeader, authorArray);
             }                
         }
@@ -143,12 +139,13 @@
         function buildBooksTable(head, data) {
 
             // Assign html elements to variables
-            let showBooks = document.getElementById('booksCard');
-            let title = document.getElementById('books-title');
-            let header = document.getElementById('booksHeader');
-            let table = document.getElementById('booksBody');
+            let showBooks = document.getElementById('favoritesCard');
+            let title = document.getElementById('favorites-title');
+            let header = document.getElementById('favoritesHeader');
+            let table = document.getElementById('favoritesBody');
 
             showBooks.style.display = "block";
+            header.innerHTML = "";
             table.innerHTML = ""; // Clear the table each time.
             title.innerHTML = "Top 3 Favorite Books";
 
@@ -175,12 +172,13 @@
         // See comments in the above function for reference.
         function buildAuthorsTable(head, data) {
 
-            let showAuthors = document.getElementById('authorsCard');
-            let title = document.getElementById('authors-title');
-            let header = document.getElementById('authorsHeader');
-            let table = document.getElementById('authorsBody');
+            let showAuthors = document.getElementById('favoritesCard');
+            let title = document.getElementById('favorites-title');
+            let header = document.getElementById('favoritesHeader');
+            let table = document.getElementById('favoritesBody');
 
             showAuthors.style.display = "block";
+            header.innerHTML = "";
             table.innerHTML = "";
             title.innerHTML = "Top 3 Favorite Authors";
                 
