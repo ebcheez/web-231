@@ -114,23 +114,24 @@
 
         // This is the compare function with input validation.
         function compareChoice () {
+            let hideAuthors = document.getElementById('authorsCard');
+            let hideBooks = document.getElementById('booksCard');
 
             // Assign the user choice to the variable 'choice'.
             let choice = document.getElementById("favoriteList").value;
 
             // Compare the choice. If it is select, output an alert.
             if (choice === "select") {
-                alert("Invalid selection, please try again!");
+                hideAuthors.style.display = "none";
+                hideBooks.style.display = "none";
 
             // Display a table of favorite books.
             } else if (choice === "books") {
-                let hideAuthors = document.getElementById('authorsCard');
                 hideAuthors.style.display = "none";
                 buildBooksTable(bookHeader, bookArray);
                 
             // Display a table of favorite authors.
             } else if (choice === "authors") {
-                let hideBooks = document.getElementById('booksCard');
                 hideBooks.style.display = "none";
                 buildAuthorsTable(authorHeader, authorArray);
             }                
