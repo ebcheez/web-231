@@ -18,8 +18,8 @@
 */
 
 /* Use a border-box for every element */
-* {
-    box-sizing: border-box;}
+/* * {
+    box-sizing: border-box;} */
 
 /* adjust the container to narrow the cards and align the return link */
 #container {
@@ -51,6 +51,7 @@
 
 /* Add some space between the cards */
 .card {
+    margin-top: 30px;
     margin-bottom: 30px;}
 
 #authorsCard {
