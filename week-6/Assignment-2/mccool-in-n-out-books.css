@@ -56,8 +56,8 @@
 /* Adjust the table */
 table {
     border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 30px;}
+    width: 90%;
+    margin: auto;}
 
 th {
     padding-top: 12px;
