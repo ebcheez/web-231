@@ -51,14 +51,14 @@
     margin-bottom: 30px;}
 
 #favoritesCard {
-    margin-top: 30px;}
+    margin-top: 30px;
+    padding-bottom: 30px;}
 
 /* Adjust the table */
 table {
     border-collapse: collapse;
-    width: 90%;
-    margin: auto;
-    margin-bottom: 30px;}
+    width: 92%;
+    margin: auto;}
 
 th {
     padding-top: 12px;
