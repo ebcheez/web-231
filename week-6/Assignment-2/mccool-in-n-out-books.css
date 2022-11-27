@@ -62,14 +62,14 @@ table {
     width: 100%;
     margin-bottom: 30px;}
 
-.tableHeader {
+thead {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #4f3674;
     color: #fff;}
 
-.tableHeader, td {
+thead, tbody {
     border: 1px solid #ddd;}
 
 tr:hover {
