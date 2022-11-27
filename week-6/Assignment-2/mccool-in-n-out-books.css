@@ -57,22 +57,18 @@
 .table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 30px;
-}
+    margin-bottom: 30px;}
 
 .tableHeader {
     padding-top: 12px 0;
     text-align: left;
     background-color: #4f3674;
-    color: #fff;
-}
+    color: #fff;}
 
 .tableHeader, .tableData {
-    border: 1px solid #ddd;
-}
+    border: 1px solid #ddd;}
 
 tr:hover {
     background-color: #d6a800;
     color: #4f3674;
-    cursor: pointer;
-}
+    cursor: pointer;}
