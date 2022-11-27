@@ -39,7 +39,7 @@
 /* Adjust the button */
 .btn {
     border-radius: 5px;
-    width: 300px;
+    width: 295px;
     margin-top: 40px;
     margin-bottom: 20px;}
 
@@ -54,12 +54,10 @@
     margin-bottom: 30px;}
 
 #authorsCard {
-    margin-top: 30px;
-}
+    margin-top: 30px;}
 
 /* Adjust the table */
-.table {
-    border: 1px solid #ddd;
+table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 30px;}
@@ -70,6 +68,9 @@
     text-align: left;
     background-color: #4f3674;
     color: #fff;}
+
+.tableHeader, td {
+    border: 1px solid #ddd;}
 
 tr:hover {
     background-color: #d6a800;
