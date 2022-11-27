@@ -60,11 +60,11 @@
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 30px;}
+    margin: 0, 20px, 20px, 20px;}
 
 thead {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: left;
     background-color: #4f3674;
     color: #fff;}
