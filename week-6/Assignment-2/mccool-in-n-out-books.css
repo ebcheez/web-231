@@ -70,7 +70,10 @@ table {
     background-color: #4f3674;
     color: #fff;}
 
-.tableHeader .tableData {
+.table .tableHeader {
+    border: 1px solid #ddd;}
+
+.table .tableData {
     border: 1px solid #ddd;}
 
 tr:hover {
