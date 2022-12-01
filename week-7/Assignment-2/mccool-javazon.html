@@ -239,45 +239,46 @@
 
 
 
+        // Build the entire services card.
+        function buildServicesTable(head, data) {
 
+            // Assign html elements to variables
+            let showServices = document.getElementById('servicesCard');
+            let title = document.getElementById('servicesTitle');
+            let header = document.getElementById('servicesHeader');
+            let table = document.getElementById('servicesBody');
+            let hideProducts = document.getElementById('productsCard');
+            let hideEmployees = document.getElementById('employeesCard');
 
+            hideProducts.style.display = "none";
+            hideEmployees.style.display = "none";
+            showServices.style.display = "block";
+            header.innerHTML = ""; // Clear the header and table each time.
+            table.innerHTML = ""; 
+            title.innerHTML = "Javazon Services";
 
-
-
-
-
-
-
-
-
-
-
-
-        // This function builds the entire favorite authors card.
-        // See comments in the above function for reference.
-        function buildAuthorsTable(head, data) {
-
-            let showAuthors = document.getElementById('favoritesCard');
-            let title = document.getElementById('favorites-title');
-            let header = document.getElementById('favoritesHeader');
-            let table = document.getElementById('favoritesBody');
-
-            showAuthors.style.display = "block";
-            header.innerHTML = "";
-            table.innerHTML = "";
-            title.innerHTML = "Top 3 Favorite Authors";
-                
+            // Populate the table header with the servicesHeader object.
             let headRow = `<tr>
-                                <th>${head.name}</th>
-                                <th>${head.genre}</th>
-                            </tr>`
-            table.innerHTML = headRow;
-
+                            <th>${head.id}</th>
+                            <th>${head.description}</th>
+                            <th>${head.rate}</th>
+                            <th>${head.minHours}</th>
+                          </tr>`
+            header.innerHTML = headRow;
+            
+            // Populate each table row by looping through objects in the array
+            // and making them a services object.
             for (let i = 0; i < data.length; i++) {
+
+                let product = new Service(data[i].id, data[i].description, data[i].rate, data[i].minHours);
+
                 let row = `<tr>
-                                <td>${data[i].name}</td>
-                                <td>${data[i].genre}</td>
-                            </tr>`
+                            <td>${product.id}</td>
+                            <td>${product.description}</td>
+                            <td>${product.rate}</td>
+                            <td>${product.minHours}</td>
+                           </tr>`
+
                 table.innerHTML += row;
             }
         }
