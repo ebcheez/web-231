@@ -95,7 +95,7 @@
             <div class="card" id="employeesCard">
                 <div class="card-title" id="employeesTitle"></div>
                 <table class="table">
-                    <thead class="tableHeader" id="emplyeesHeader">
+                    <thead class="tableHeader" id="employeesHeader">
                     </thead>
                     <tbody class="tableData" id="employeesBody">
                     </tbody>
@@ -178,6 +178,9 @@
             
             // Compare the choice. If it is select, hide the table.
             if (choice === "select") {
+                document.getElementById('productsCard').style.display = "none";
+                document.getElementById('servicesCard').style.display = "none";
+                document.getElementById('employeesCard').style.display = "none";
 
             // Display a table of products.
             } else if (choice === "products") {
@@ -323,7 +326,6 @@
                 table.innerHTML += row;
             }
         }
-
 
     </script>
 
