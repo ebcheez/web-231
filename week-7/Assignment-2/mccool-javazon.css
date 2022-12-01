@@ -1,0 +1,77 @@
+/*
+===============================================================================
+; Title: Assignment 6 - in-n-out-books
+; Author: Professor Krasso
+; Date: 26 November, 2022
+; Modified by: Eric McCool
+; Description: This is Assignment 6.2 for week 6.
+;              Create two tables - authors, books from object literals.
+;              Display one or the other from a drop-down menu.
+;              Hide the table not being displayed.
+; Works Cited: Web 231 Assignment 6 - in-n-out-books,
+;              Web 231 Coding Guidelines,
+;              Web 231 HTML, CSS, and JavaScript Requirements,
+;              W3Schools - JS objects, JS how to JS toggle hide-show, for loop,
+;              arrays, object literals and JSON,
+;              Google Fonts.  
+; Notes: Completed as instructed, then began to tweak the rules to mirror the 
+;        examples in the assignment pdf.
+===============================================================================
+*/
+
+/* Use a border-box for every element */
+* {
+    box-sizing: border-box;}
+
+/* adjust the container to narrow the cards and align the return link */
+#container {
+    width: 600px;
+    margin: auto;}
+
+/* Adjust the app-header */
+.app-header {
+    text-align: center;
+    font-weight: 400;
+    margin: 20px auto 40px auto;}
+
+/* Add some space between the card title and input box */
+#txtMyChoice {
+    margin-top: 40px;}
+
+/* Adjust the button */
+.btn {
+    border-radius: 5px;
+    width: 295px;
+    margin-top: 40px;
+    margin-bottom: 20px;}
+
+/* Add some space between the cards */
+.card {
+    margin-top: 30px;
+    margin-bottom: 30px;}
+
+#favoritesCard {
+    margin-top: 30px;
+    padding-bottom: 30px;}
+
+/* Adjust the table */
+table {
+    border-collapse: collapse;
+    width: 92%;
+    margin: auto;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4f3674;
+    color: #fff;}
+
+th, td {
+    padding-left: 6px;
+    border: 1px solid #ddd;}
+
+tr:hover {
+    background-color: #d6a800;
+    color: #4f3674;
+    cursor: pointer;}
