@@ -68,6 +68,7 @@
 
         <!-- Create a div to hold the area where the cards will be displayed -->
         <div id="displayDiv">
+            <script>document.getElementById('displayDiv').style.display = "none";</script>
 
             <!-- This is the products output card. -->
             <div class="card" id="productsCard">
@@ -144,10 +145,10 @@
         // Create product objects.
         const productsHeader = {"id": "Product ID", "description": "Description", "price": "Price", "quantity": "Quantity", "value": "Total Value"};
         const productsArray = [
-            {"id": "10001", "description": "8GB ThumbDrive", "price": "2.99", "quantity": "11"},
-            {"id": "10002", "description": "16GB ThumbDrive", "price": "5.99", "quantity": "7"},
-            {"id": "10003", "description": "32GB ThumbDrive", "price": "9.99", "quantity": "5"},
-            {"id": "10004", "description": "64GB ThumbDrive", "price": "12.99", "quantity": "3"},
+            {"id": "10001", "description": "  8GB ThumbDrive", "price": "2.99", "quantity": "11"},
+            {"id": "10002", "description": " 16GB ThumbDrive", "price": "5.99", "quantity": "7"},
+            {"id": "10003", "description": " 32GB ThumbDrive", "price": "9.99", "quantity": "5"},
+            {"id": "10004", "description": " 64GB ThumbDrive", "price": "12.99", "quantity": "3"},
             {"id": "10005", "description": "128GB ThumbDrive", "price": "19.99", "quantity": "2"}
         ];
 
