@@ -179,50 +179,8 @@
 
             // Display a table of products.
             } else if (choice === "products") {
-                (function(productsHeader, productsArray) {
+                buildProductsTable(productsHeader, productsArray);
 
-                    // Assign html elements to variables
-                    let showProducts = document.getElementById('productsCard');
-                    let title = document.getElementById('productsTitle');
-                    let header = document.getElementById('productsHeader');
-                    let table = document.getElementById('productsBody');
-                    let hideServices = document.getElementById('servicesCard');
-                    let hideEmployees = document.getElementById('employeesCard');
-
-                    hideServices.style.display = "none";
-                    hideEmployees.style.display = "none";
-                    showProducts.style.display = "block";
-                    header.innerHTML = ""; // Clear the header and table each time.
-                    table.innerHTML = ""; 
-                    title.innerHTML = "Javazon Products";
-
-                    // Populate the table header with the productsHeader object.
-                    let headRow = `<tr>
-                                    <th>${productsHeader.id}</th>
-                                    <th>${productsHeader.description}</th>
-                                    <th>${productsHeader.price}</th>
-                                    <th>${productsHeader.quantity}</th>
-                                    <th>${productsHeader.value}</th>
-                                </tr>`
-                    header.innerHTML = headRow;
-
-                    // Populate each row with objects from the productsArray.
-                    for (let i = 0; i < data.length; i++) {
-
-                        let product = new Product(data[i].id, data[i].description, data[i].price, data[i].quantity);
-
-                        let row = `<tr>
-                                    <td>${product.id}</td>
-                                    <td>${product.description}</td>
-                                    <td>${product.price}</td>
-                                    <td>${product.quantity}</td>
-                                    <td>${product.totalValue}</td>
-                                </tr>`
-
-                        table.innerHTML += row;
-                    }
-                });
-                
             // Display a table of services.
             } else if (choice == "services") {
                 buildServicesTable(servicesHeader, servicesArray);
@@ -234,50 +192,50 @@
         }
 
 
+        function buildProductsTable(head, data) {
 
+            // Assign html elements to variables
+            let showProducts = document.getElementById('productsCard');
+            let title = document.getElementById('productsTitle');
+            let header = document.getElementById('productsHeader');
+            let table = document.getElementById('productsBody');
+            let hideServices = document.getElementById('servicesCard');
+            let hideEmployees = document.getElementById('employeesCard');
 
+            hideServices.style.display = "none";
+            hideEmployees.style.display = "none";
+            showProducts.style.display = "block";
+            header.innerHTML = ""; // Clear the header and table each time.
+            table.innerHTML = ""; 
+            title.innerHTML = "Javazon Products";
 
-
-        // function buildProductsTable(head, data) {
-
-        //     // Assign html elements to variables
-        //     let showProducts = document.getElementById('productsCard');
-        //     let title = document.getElementById('productsTitle');
-        //     let header = document.getElementById('productsHeader');
-        //     let table = document.getElementById('productsBody');
-
-        //     showProducts.style.display = "block";
-        //     header.innerHTML = ""; // Clear the header and table each time.
-        //     table.innerHTML = ""; 
-        //     title.innerHTML = "Javazon Products";
-
-        //     // Populate the table header with the productsHeader object.
-        //     let headRow = `<tr>
-        //                     <th>${head.id}</th>
-        //                     <th>${head.description}</th>
-        //                     <th>${head.price}</th>
-        //                     <th>${head.quantity}</th>
-        //                     <th>${head.value}</th>
-        //                   </tr>`
-        //     header.innerHTML = headRow;
+            // Populate the table header with the productsHeader object.
+            let headRow = `<tr>
+                            <th>${head.id}</th>
+                            <th>${head.description}</th>
+                            <th>${head.price}</th>
+                            <th>${head.quantity}</th>
+                            <th>${head.value}</th>
+                          </tr>`
+            header.innerHTML = headRow;
             
-        //     // Populate each table row by looping through objects in the array
-        //     // and making them a product object.
-        //     for (let i = 0; i < data.length; i++) {
+            // Populate each table row by looping through objects in the array
+            // and making them a product object.
+            for (let i = 0; i < data.length; i++) {
 
-        //         let product = new Product(data[i].id, data[i].description, data[i].price, data[i].quantity);
+                let product = new Product(data[i].id, data[i].description, data[i].price, data[i].quantity);
 
-        //         let row = `<tr>
-        //                     <td>${product.id}</td>
-        //                     <td>${product.description}</td>
-        //                     <td>${product.price}</td>
-        //                     <td>${product.quantity}</td>
-        //                     <td>${product.totalValue}</td>
-        //                    </tr>`
+                let row = `<tr>
+                            <td>${product.id}</td>
+                            <td>${product.description}</td>
+                            <td>${product.price}</td>
+                            <td>${product.quantity}</td>
+                            <td>${product.totalValue}</td>
+                           </tr>`
 
-        //         table.innerHTML += row;
-        //     }
-        // }
+                table.innerHTML += row;
+            }
+        }
 
 
 
