@@ -146,16 +146,16 @@
         const productsArray = [
             {"id": "10001", "description": "8GB ThumbDrive", "price": "2.99", "quantity": "11"},
             {"id": "10002", "description": "16GB ThumbDrive", "price": "5.99", "quantity": "7"},
-            {"id": "10001", "description": "32GB ThumbDrive", "price": "9.99", "quantity": "5"},
-            {"id": "10001", "description": "64GB ThumbDrive", "price": "12.99", "quantity": "3"},
-            {"id": "10001", "description": "128GB ThumbDrive", "price": "19.99", "quantity": "2"}
+            {"id": "10003", "description": "32GB ThumbDrive", "price": "9.99", "quantity": "5"},
+            {"id": "10004", "description": "64GB ThumbDrive", "price": "12.99", "quantity": "3"},
+            {"id": "10005", "description": "128GB ThumbDrive", "price": "19.99", "quantity": "2"}
         ];
 
         const servicesHeader = {"id": "Service ID", "description": "Description", "rate": "Hourly Rate", "minHours": "Minimum Billable Hours"};
         const servicesArray = [
             {"id": "100", "description": "System Design", "rate": "120.00", "minHours": "16"},
             {"id": "101", "description": "System Repair", "rate": "90.00", "minHours": "2"},
-            {"id": "100", "description": "System Upgrade", "rate": "75.00", "minHours": "3"}
+            {"id": "102", "description": "System Upgrade", "rate": "75.00", "minHours": "3"}
         ];
 
         const employeesHeader = {"id": "Employee ID", "lastName": "Last Name", "firstName": "First Name", "salary": "Salary"};
@@ -238,8 +238,6 @@
             }
         }
 
-
-
         // Build the entire services card.
         function buildServicesTable(head, data) {
 
@@ -282,6 +280,50 @@
                 table.innerHTML += row;
             }
         }
+
+        // Build the entire employees card.
+        function buildEmployeesTable(head, data) {
+
+            // Assign html elements to variables
+            let showEmployees = document.getElementById('employeesCard');
+            let title = document.getElementById('employeesTitle');
+            let header = document.getElementById('employeesHeader');
+            let table = document.getElementById('employeesBody');
+            let hideProducts = document.getElementById('productsCard');
+            let hideServices = document.getElementById('servicesCard');
+
+            hideProducts.style.display = "none";
+            hideServices.style.display = "none";
+            showEmployees.style.display = "block";
+            header.innerHTML = ""; // Clear the header and table each time.
+            table.innerHTML = ""; 
+            title.innerHTML = "Javazon Employees";
+
+            // Populate the table header with the employeesHeader object.
+            let headRow = `<tr>
+                            <th>${head.id}</th>
+                            <th>${head.lastName}</th>
+                            <th>${head.firstName}</th>
+                            <th>${head.salary}</th>
+                        </tr>`
+            header.innerHTML = headRow;
+
+            // Populate each table row by looping through objects in the array
+            // and making them an employees object.
+            for (let i = 0; i < data.length; i++) {
+
+                let product = new Employee(data[i].id, data[i].lastName, data[i].firstName, data[i].salary);
+
+                let row = `<tr>
+                            <td>${product.id}</td>
+                            <td>${product.lastName}</td>
+                            <td>${product.firstName}</td>
+                            <td>${product.salary}</td>
+                        </tr>`
+                table.innerHTML += row;
+            }
+        }
+
 
     </script>
 
