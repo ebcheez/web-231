@@ -176,43 +176,57 @@
             // Assign the user choice to the variable 'choice'.
             let choice = document.getElementById("optionsList").value;
             
-            // Compare the choice. If it is select, hide the table.
-            if (choice === "select") {
-                document.getElementById('productsCard').style.display = "none";
-                document.getElementById('servicesCard').style.display = "none";
-                document.getElementById('employeesCard').style.display = "none";
+            // Compare the choice. If it is select, hide the tables.
+            switch (choice) {
 
-            // Display a table of products.
-            } else if (choice === "products") {
-                buildProductsTable(productsHeader, productsArray);
+                case "select":
+                    document.getElementById('productsCard').style.display = "none";
+                    document.getElementById('servicesCard').style.display = "none";
+                    document.getElementById('employeesCard').style.display = "none";
+                    break;
 
-            // Display a table of services.
-            } else if (choice == "services") {
-                buildServicesTable(servicesHeader, servicesArray);
-                        
-            // Display a table of employees.
-            } else {
-                buildEmployeesTable(employeesHeader, employeesArray);
+                // Display a table of products.
+                case "products":
+                    document.getElementById('servicesCard').style.display = "none";
+                    document.getElementById('employeesCard').style.display = "none";
+                    document.getElementById('productsCard').style.display = "block";
+                    // Clear the header and table each time.
+                    document.getElementById('productsHeader').innerHTML = ""; 
+                    document.getElementById('productsBody').innerHTML = ""; 
+                    document.getElementById('productsTitle').innerHTML = "Javazon Products";
+                    buildProductsTable(productsHeader, productsArray);
+                    break;
+
+                // Display a table of services.
+                case "services":
+                    document.getElementById('productsCard').style.display = "none";
+                    document.getElementById('employeesCard').style.display = "none";
+                    document.getElementById('servicesCard').style.display = "block";
+                    document.getElementById('servicesHeader').innerHTML = ""; 
+                    document.getElementById('servicesBody').innerHTML = ""; 
+                    document.getElementById('servicesTitle').innerHTML = "Javazon Services";
+                    buildServicesTable(servicesHeader, servicesArray);
+                    break;
+
+                // Display a table of employees.
+                case "employees":
+                    document.getElementById('productsCard').style.display = "none";
+                    document.getElementById('servicesCard').style.display = "none";
+                    document.getElementById('employeesCard').style.display = "block";
+                    document.getElementById('employeesHeader').innerHTML = ""; 
+                    document.getElementById('employeesBody').innerHTML = ""; 
+                    document.getElementById('employeesTitle').innerHTML = "Javazon Employees";
+                    buildEmployeesTable(employeesHeader, employeesArray);
+                    break;
+
+                // The switch default.
+                default:
+                   alert("No value found");  
             }
         }
 
-
+        // Build the products table
         function buildProductsTable(head, data) {
-
-            // Assign html elements to variables
-            let showProducts = document.getElementById('productsCard');
-            let title = document.getElementById('productsTitle');
-            let header = document.getElementById('productsHeader');
-            let table = document.getElementById('productsBody');
-            let hideServices = document.getElementById('servicesCard');
-            let hideEmployees = document.getElementById('employeesCard');
-
-            hideServices.style.display = "none";
-            hideEmployees.style.display = "none";
-            showProducts.style.display = "block";
-            header.innerHTML = ""; // Clear the header and table each time.
-            table.innerHTML = ""; 
-            title.innerHTML = "Javazon Products";
 
             // Populate the table header with the productsHeader object.
             let headRow = `<tr>
@@ -222,10 +236,9 @@
                             <th>${head.quantity}</th>
                             <th>${head.value}</th>
                           </tr>`
-            header.innerHTML = headRow;
+            document.getElementById('productsHeader').innerHTML = headRow;
             
-            // Populate each table row by looping through objects in the array
-            // and making them a product object.
+            // Populate each table row with product class objects.
             for (let i = 0; i < data.length; i++) {
 
                 let product = new Product(data[i].id, data[i].description, data[i].price, data[i].quantity);
@@ -237,27 +250,12 @@
                             <td>${product.quantity}</td>
                             <td>${product.totalValue}</td>
                            </tr>`
-                table.innerHTML += row;
+                document.getElementById('productsBody').innerHTML += row;
             }
         }
 
-        // Build the entire services card.
+        // Build the services table.
         function buildServicesTable(head, data) {
-
-            // Assign html elements to variables
-            let showServices = document.getElementById('servicesCard');
-            let title = document.getElementById('servicesTitle');
-            let header = document.getElementById('servicesHeader');
-            let table = document.getElementById('servicesBody');
-            let hideProducts = document.getElementById('productsCard');
-            let hideEmployees = document.getElementById('employeesCard');
-
-            hideProducts.style.display = "none";
-            hideEmployees.style.display = "none";
-            showServices.style.display = "block";
-            header.innerHTML = ""; // Clear the header and table each time.
-            table.innerHTML = ""; 
-            title.innerHTML = "Javazon Services";
 
             // Populate the table header with the servicesHeader object.
             let headRow = `<tr>
@@ -266,10 +264,9 @@
                             <th>${head.rate}</th>
                             <th>${head.minHours}</th>
                           </tr>`
-            header.innerHTML = headRow;
+            document.getElementById('servicesHeader').innerHTML = headRow;
             
-            // Populate each table row by looping through objects in the array
-            // and making them a services object.
+            // Populate each table row with services class objects.
             for (let i = 0; i < data.length; i++) {
 
                 let product = new Service(data[i].id, data[i].description, data[i].rate, data[i].minHours);
@@ -280,27 +277,12 @@
                             <td>${product.rate}</td>
                             <td>${product.minHours}</td>
                            </tr>`
-                table.innerHTML += row;
+                document.getElementById('servicesBody').innerHTML += row;
             }
         }
 
-        // Build the entire employees card.
+        // Build the employees table.
         function buildEmployeesTable(head, data) {
-
-            // Assign html elements to variables
-            let showEmployees = document.getElementById('employeesCard');
-            let title = document.getElementById('employeesTitle');
-            let header = document.getElementById('employeesHeader');
-            let table = document.getElementById('employeesBody');
-            let hideProducts = document.getElementById('productsCard');
-            let hideServices = document.getElementById('servicesCard');
-
-            hideProducts.style.display = "none";
-            hideServices.style.display = "none";
-            showEmployees.style.display = "block";
-            header.innerHTML = ""; // Clear the header and table each time.
-            table.innerHTML = ""; 
-            title.innerHTML = "Javazon Employees";
 
             // Populate the table header with the employeesHeader object.
             let headRow = `<tr>
@@ -309,10 +291,9 @@
                             <th>${head.firstName}</th>
                             <th>${head.salary}</th>
                         </tr>`
-            header.innerHTML = headRow;
+            document.getElementById('employeesHeader').innerHTML = headRow;
 
-            // Populate each table row by looping through objects in the array
-            // and making them an employees object.
+            // Populate each table row with employee class objects.
             for (let i = 0; i < data.length; i++) {
 
                 let product = new Employee(data[i].id, data[i].lastName, data[i].firstName, data[i].salary);
@@ -323,7 +304,7 @@
                             <td>${product.firstName}</td>
                             <td>${product.salary}</td>
                         </tr>`
-                table.innerHTML += row;
+                document.getElementById('employeesBody').innerHTML += row;
             }
         }
 
