@@ -5,14 +5,12 @@
 ; Date: 1 December, 2022
 ; Modified by: Eric McCool
 ; Description: This is Assignment 7.2.
-;              Create 3 classes and tables to display the objects.
+;              Create 3 classes and tables to display objects in a table.
 ;              Display the table from a drop-down menu.
-;              Hide the tables not being displayed.
+;              Use switch and hide the tables not being displayed.
 ; Works Cited: Web 231 Assignment 7 - Javazon,
-;              Web 231 Coding Guidelines,
-;              Web 231 HTML, CSS, and JavaScript Requirements,
 ;              W3Schools - JS classes, objects, HTML tables,
-;              Mozilla.org - classes,
+;              Mozilla.org - classes, switch statement,
 ;              Google Fonts.
 ; Notes: 
 ===============================================================================
@@ -53,9 +51,7 @@
                         <option value="services">Services</option>
                         <option value="employees">Employees</option>
                     </select>
-                    <div>
-                        <button class="btn btn-primary" id="btnDisplayListing">Display Listing</button>
-                    </div>
+                    <button class="btn btn-primary" id="btnDisplayListing">Display Listing</button>
                 </div>
             </div><!-- End of the input card.-->
 
@@ -103,15 +99,10 @@
             </div><!-- End of the employees output card. -->
 
         </div><!-- End of the displayDiv -->
-
-
     </div><!-- End of the container <div> -->
 
-
-
-    <!-- Do a lot of JavaScript! Then do moar! Moar!! MOAR!! -->
+    <!-- Bring on the JS. -->
     <script>
-
         // Create 3 classes.
         class Product {
             constructor(id, description, price, quantity) {
@@ -122,7 +113,6 @@
                 this.totalValue = (quantity * price).toFixed(2);
             }
         }
-
         class Service {
             constructor(id, description, rate, minHours) {
                 this.id = id;
@@ -131,7 +121,6 @@
                 this.minHours = minHours;
             }
         }
-
         class Employee {
             constructor(id, lastName, firstName, salary) {
                 this.id = id;
@@ -141,7 +130,7 @@
             }
         }
 
-        // Create product objects.
+        // Create header and array objects.
         const productsHeader = {"id": "Product ID", "description": "Description", "price": "Price", "quantity": "Quantity", "value": "Total Value"};
         const productsArray = [
             {"id": "10001", "description": "  8GB ThumbDrive", "price": "2.99", "quantity": "11"},
@@ -150,14 +139,12 @@
             {"id": "10004", "description": " 64GB ThumbDrive", "price": "12.99", "quantity": "3"},
             {"id": "10005", "description": "128GB ThumbDrive", "price": "19.99", "quantity": "2"}
         ];
-
         const servicesHeader = {"id": "Service ID", "description": "Description", "rate": "Hourly Rate", "minHours": "Minimum Billable Hours"};
         const servicesArray = [
             {"id": "100", "description": "System Design", "rate": "120.00", "minHours": "16"},
             {"id": "101", "description": "System Repair", "rate": "90.00", "minHours": "2"},
             {"id": "102", "description": "System Upgrade", "rate": "75.00", "minHours": "3"}
         ];
-
         const employeesHeader = {"id": "Employee ID", "lastName": "Last Name", "firstName": "First Name", "salary": "Salary"};
         const employeesArray = [
             {"id": "1007", "lastName": "Aykroyd", "firstName": "Dan", "salary": "19.25"},
@@ -170,7 +157,7 @@
         // Call the compareChoice function when the Display Listing button is selected.
         document.getElementById("btnDisplayListing").onclick = compareChoice; 
 
-        // This is the compare function with input validation.
+        // Compare and execute the choice.
         function compareChoice () {
 
             // Assign the user choice to the variable 'choice'.
@@ -184,20 +171,16 @@
                     document.getElementById('servicesCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "none";
                     break;
-
-                // Display a table of products.
+                // Hide tables not selected, clear current table, add title, and create table.
                 case "products":
                     document.getElementById('servicesCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "none";
                     document.getElementById('productsCard').style.display = "block";
-                    // Clear the header and table each time.
                     document.getElementById('productsHeader').innerHTML = ""; 
                     document.getElementById('productsBody').innerHTML = ""; 
                     document.getElementById('productsTitle').innerHTML = "Javazon Products";
                     buildProductsTable(productsHeader, productsArray);
                     break;
-
-                // Display a table of services.
                 case "services":
                     document.getElementById('productsCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "none";
@@ -207,8 +190,6 @@
                     document.getElementById('servicesTitle').innerHTML = "Javazon Services";
                     buildServicesTable(servicesHeader, servicesArray);
                     break;
-
-                // Display a table of employees.
                 case "employees":
                     document.getElementById('productsCard').style.display = "none";
                     document.getElementById('servicesCard').style.display = "none";
@@ -218,8 +199,6 @@
                     document.getElementById('employeesTitle').innerHTML = "Javazon Employees";
                     buildEmployeesTable(employeesHeader, employeesArray);
                     break;
-
-                // The switch default.
                 default:
                    alert("No value found");  
             }
@@ -240,15 +219,13 @@
             
             // Populate each table row with product class objects.
             for (let i = 0; i < data.length; i++) {
-
                 let product = new Product(data[i].id, data[i].description, data[i].price, data[i].quantity);
-
                 let row = `<tr>
                             <td>${product.id}</td>
                             <td>${product.description}</td>
-                            <td>${product.price}</td>
+                            <td>"$"${product.price}</td>
                             <td>${product.quantity}</td>
-                            <td>${product.totalValue}</td>
+                            <td>"$"${product.totalValue}</td>
                            </tr>`
                 document.getElementById('productsBody').innerHTML += row;
             }
@@ -268,13 +245,11 @@
             
             // Populate each table row with services class objects.
             for (let i = 0; i < data.length; i++) {
-
                 let product = new Service(data[i].id, data[i].description, data[i].rate, data[i].minHours);
-
                 let row = `<tr>
                             <td>${product.id}</td>
                             <td>${product.description}</td>
-                            <td>${product.rate}</td>
+                            <td>"$"${product.rate}</td>
                             <td>${product.minHours}</td>
                            </tr>`
                 document.getElementById('servicesBody').innerHTML += row;
@@ -290,25 +265,22 @@
                             <th>${head.lastName}</th>
                             <th>${head.firstName}</th>
                             <th>${head.salary}</th>
-                        </tr>`
+                           </tr>`
             document.getElementById('employeesHeader').innerHTML = headRow;
 
             // Populate each table row with employee class objects.
             for (let i = 0; i < data.length; i++) {
-
                 let product = new Employee(data[i].id, data[i].lastName, data[i].firstName, data[i].salary);
-
                 let row = `<tr>
                             <td>${product.id}</td>
                             <td>${product.lastName}</td>
                             <td>${product.firstName}</td>
-                            <td>${product.salary}</td>
-                        </tr>`
+                            <td>"$"${product.salary}</td>
+                           </tr>`
                 document.getElementById('employeesBody').innerHTML += row;
             }
         }
 
     </script>
-
 </body>
 </html>
