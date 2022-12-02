@@ -223,9 +223,9 @@
                 let row = `<tr>
                             <td>${product.id}</td>
                             <td>${product.description}</td>
-                            <td>"$"${product.price}</td>
+                            <td>$${product.price}</td>
                             <td>${product.quantity}</td>
-                            <td>"$"${product.totalValue}</td>
+                            <td>$${product.totalValue}</td>
                            </tr>`
                 document.getElementById('productsBody').innerHTML += row;
             }
@@ -249,7 +249,7 @@
                 let row = `<tr>
                             <td>${product.id}</td>
                             <td>${product.description}</td>
-                            <td>"$"${product.rate}</td>
+                            <td>$${product.rate}</td>
                             <td>${product.minHours}</td>
                            </tr>`
                 document.getElementById('servicesBody').innerHTML += row;
@@ -275,7 +275,7 @@
                             <td>${product.id}</td>
                             <td>${product.lastName}</td>
                             <td>${product.firstName}</td>
-                            <td>"$"${product.salary}</td>
+                            <td>$${product.salary}</td>
                            </tr>`
                 document.getElementById('employeesBody').innerHTML += row;
             }
