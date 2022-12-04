@@ -32,7 +32,7 @@
     <title>WEB 231 - Enterprise JavaScript I</title>
 </head>
 
-<body onload="hideTables()">
+<body onload="hideCards()">
     <div id="container">
         <h1 class="app-header">Welcome to the Javazon App!</h1>
 
@@ -176,13 +176,11 @@
                 case "select":
                     hideCards();
                     break;
-                // Hide tables not selected, clear current table, add title, and create table.
+                // Hide tables not selected, add title, and create table.
                 case "products":
                     document.getElementById('servicesCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "none";
                     document.getElementById('productsCard').style.display = "block";
-                    // document.getElementById('productsHeader').innerHTML = ""; 
-                    // document.getElementById('productsBody').innerHTML = ""; 
                     document.getElementById('productsTitle').innerHTML = "Javazon Products";
                     buildProductsTable(productsHeader, productsArray);
                     break;
@@ -190,8 +188,6 @@
                     document.getElementById('productsCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "none";
                     document.getElementById('servicesCard').style.display = "block";
-                    // document.getElementById('servicesHeader').innerHTML = ""; 
-                    // document.getElementById('servicesBody').innerHTML = ""; 
                     document.getElementById('servicesTitle').innerHTML = "Javazon Services";
                     buildServicesTable(servicesHeader, servicesArray);
                     break;
@@ -199,8 +195,6 @@
                     document.getElementById('productsCard').style.display = "none";
                     document.getElementById('servicesCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "block";
-                    // document.getElementById('employeesHeader').innerHTML = ""; 
-                    // document.getElementById('employeesBody').innerHTML = ""; 
                     document.getElementById('employeesTitle').innerHTML = "Javazon Employees";
                     buildEmployeesTable(employeesHeader, employeesArray);
                     break;
@@ -211,10 +205,8 @@
 
         // Hide all three cards.
         function hideCards() {
-            document.getElementById('productsCard').style.display = "none";
-            document.getElementById('servicesCard').style.display = "none";
-            document.getElementById('employeesCard').style.display = "none";
-
+            document.getElementsByClassName('displayDiv').style.display = "none";
+            return;
         }
 
         // Build the products table.
@@ -241,6 +233,7 @@
                             <td>$${product.totalValue}</td>
                            </tr>`
                 document.getElementById('productsBody').innerHTML += row;
+                return;
             }
         }
 
@@ -266,6 +259,7 @@
                             <td>${product.minHours}</td>
                            </tr>`
                 document.getElementById('servicesBody').innerHTML += row;
+                return;
             }
         }
 
@@ -291,6 +285,7 @@
                             <td>$${product.salary}</td>
                            </tr>`
                 document.getElementById('employeesBody').innerHTML += row;
+                return;
             }
         }
 
