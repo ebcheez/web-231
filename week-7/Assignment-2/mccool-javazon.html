@@ -32,7 +32,7 @@
     <title>WEB 231 - Enterprise JavaScript I</title>
 </head>
 
-<body onload="hideCards()">
+<body>
     <div id="container">
         <h1 class="app-header">Welcome to the Javazon App!</h1>
 
@@ -66,7 +66,7 @@
 
         <!-- Create a div to hold the area where the cards will be displayed. -->
         <!-- Hide the empty cards upon loading. -->
-        <div id="displayDiv">
+        <div id="displayDiv" onload="hideCards()">
 
             <!-- This is the products output card. -->
             <div class="card" id="productsCard">
@@ -160,14 +160,14 @@
             {"id": "1011", "lastName": "Chong", "firstName": "Tommy", "salary": "20.65"}
         ];
 
-        // Enter the 'main' (make it go).
+        // Make it go.
         document.getElementById("btnDisplayListing").onclick = compareChoice;
         
         // ======================== Create functions here =======================
         // Compare and execute the choice.
         function compareChoice () {
 
-            Clear the tables.
+            // Clear the tables.
             document.getElementsByClassName('tableData').innerHTML = ""; 
             document.getElementsByClassName('tableHeader').innerHTML = ""; 
 
@@ -209,7 +209,9 @@
 
         // Hide all three cards.
         function hideCards() {
-            document.getElementsById('displayDiv').style.display = "none";
+            document.getElementsById('productsCard').style.display = "none";
+            document.getElementsById('servicesCard').style.display = "none";
+            document.getElementsById('employeesCard').style.display = "none";
         }
 
         // Build the products table.
