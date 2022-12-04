@@ -33,13 +33,6 @@
 </head>
 
 <body onload="hideCards()">
-    <script>
-        // Hide all three cards.
-        function hideCards() {
-            document.getElementsById('displayDiv').style.display = "none";
-        }
-    </script>
-    
     <div id="container">
         <h1 class="app-header">Welcome to the Javazon App!</h1>
 
@@ -174,10 +167,6 @@
         // Compare and execute the choice.
         function compareChoice () {
 
-            // Clear the tables.
-            document.getElementsByClassName('tableData').innerHTML = ""; 
-            document.getElementsByClassName('tableHeader').innerHTML = ""; 
-
             // Assign the user choice to the variable 'choice'.
             let choice = document.getElementById("optionsList").value;
             
@@ -187,11 +176,13 @@
                 case "select":
                     hideCards();
                     break;
-                // Hide tables not selected, add title, and create table.
+                // Hide tables not selected, clear the table, add title, and create table.
                 case "products":
                     document.getElementById('servicesCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "none";
                     document.getElementById('productsCard').style.display = "block";
+                    document.getElementById('productsHeader').innerHTML = ""; 
+                    document.getElementById('productsBody').innerHTML = ""; 
                     document.getElementById('productsTitle').innerHTML = "Javazon Products";
                     buildProductsTable(productsHeader, productsArray);
                     break;
@@ -199,6 +190,8 @@
                     document.getElementById('productsCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "none";
                     document.getElementById('servicesCard').style.display = "block";
+                    document.getElementById('servicesHeader').innerHTML = ""; 
+                    document.getElementById('servicesBody').innerHTML = ""; 
                     document.getElementById('servicesTitle').innerHTML = "Javazon Services";
                     buildServicesTable(servicesHeader, servicesArray);
                     break;
@@ -206,6 +199,8 @@
                     document.getElementById('productsCard').style.display = "none";
                     document.getElementById('servicesCard').style.display = "none";
                     document.getElementById('employeesCard').style.display = "block";
+                    document.getElementById('employeesHeader').innerHTML = ""; 
+                    document.getElementById('employeesBody').innerHTML = ""; 
                     document.getElementById('employeesTitle').innerHTML = "Javazon Employees";
                     buildEmployeesTable(employeesHeader, employeesArray);
                     break;
@@ -215,11 +210,11 @@
         }
 
         // Hide all three cards.
-        // function hideCards() {
-        //     document.getElementsById('productsCard').style.display = "none";
-        //     document.getElementsById('servicesCard').style.display = "none";
-        //     document.getElementsById('employeesCard').style.display = "none";
-        // }
+        function hideCards() {
+            document.getElementById('productsCard').style.display = "none";
+            document.getElementById('servicesCard').style.display = "none";
+            document.getElementById('employeesCard').style.display = "none";
+        }
 
         // Build the products table.
         function buildProductsTable(head, data) {
