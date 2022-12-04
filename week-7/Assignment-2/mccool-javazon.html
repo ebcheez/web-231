@@ -64,8 +64,9 @@
 
         </div><!-- End of the get-option <div>. -->
 
-        <!-- Create a div to hold the area where the cards will be displayed -->
-        <div id="displayDiv">
+        <!-- Create a div to hold the area where the cards will be displayed. -->
+        <!-- Hide the empty cards upon loading. -->
+        <div id="displayDiv" onload="hideCards()">
 
             <!-- This is the products output card. -->
             <div class="card" id="productsCard">
@@ -169,9 +170,7 @@
             switch (choice) {
 
                 case "select":
-                    document.getElementById('productsCard').style.display = "none";
-                    document.getElementById('servicesCard').style.display = "none";
-                    document.getElementById('employeesCard').style.display = "none";
+                    hideCards();
                     break;
                 // Hide tables not selected, clear current table, add title, and create table.
                 case "products":
@@ -206,7 +205,15 @@
             }
         }
 
-        // Build the products table
+        // Hide all three cards.
+        function hideCards() {
+            document.getElementById('productsCard').style.display = "none";
+            document.getElementById('servicesCard').style.display = "none";
+            document.getElementById('employeesCard').style.display = "none";
+
+        }
+
+        // Build the products table.
         function buildProductsTable(head, data) {
 
             // Populate the table header with the productsHeader object.
