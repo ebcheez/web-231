@@ -104,9 +104,10 @@
         </div><!-- End of the displayDiv -->
     </div><!-- End of the container <div> -->
 
+
     <!-- Bring on the JS. -->
     <script>
-        // Create 3 classes.
+        // ======================== Create classes here =======================
         class Product {
             constructor(id, description, price, quantity) {
                 this.id = id;
@@ -133,6 +134,7 @@
             }
         }
 
+        // ======================== Put data here =======================
         // Create header and array objects.
         const productsHeader = {"id": "Product ID", "description": "Description", "price": "Price", "quantity": "Quantity", "value": "Total Value"};
         const productsArray = [
@@ -158,14 +160,15 @@
         ];
 
         // Call the compareChoice function when the Display Listing button is selected.
-        document.getElementById("btnDisplayListing").onclick = compareChoice; 
-
+        document.getElementById("btnDisplayListing").onclick = compareChoice;
+        
+        // ======================== Create functions here =======================
         // Compare and execute the choice.
         function compareChoice () {
 
             // Clear the tables.
-            document.getElementsByClassName('tableData').innerHTML = ""; 
-            document.getElementsByClassName('tableHeader').innerHTML = ""; 
+            // document.getElementsByClassName('tableData').innerHTML = ""; 
+            // document.getElementsByClassName('tableHeader').innerHTML = ""; 
 
             // Assign the user choice to the variable 'choice'.
             let choice = document.getElementById("optionsList").value;
@@ -206,7 +209,6 @@
         // Hide all three cards.
         function hideCards() {
             document.getElementsByClassName('displayDiv').style.display = "none";
-            return;
         }
 
         // Build the products table.
@@ -233,7 +235,6 @@
                             <td>$${product.totalValue}</td>
                            </tr>`
                 document.getElementById('productsBody').innerHTML += row;
-            return;
             }
         }
 
@@ -259,7 +260,6 @@
                             <td>${product.minHours}</td>
                            </tr>`
                 document.getElementById('servicesBody').innerHTML += row;
-            return;
             }
         }
 
@@ -285,7 +285,6 @@
                             <td>$${product.salary}</td>
                            </tr>`
                 document.getElementById('employeesBody').innerHTML += row;
-            return;
             }
         }
 
