@@ -105,8 +105,9 @@
     </div><!-- End of the container <div> -->
 
 
-    <!-- Bring on the JS. -->
+                                <!-- Bring on the JS. -->
     <script>
+
         // ======================== Create classes here =======================
         class Product {
             constructor(id, description, price, quantity) {
@@ -159,7 +160,7 @@
             {"id": "1011", "lastName": "Chong", "firstName": "Tommy", "salary": "20.65"}
         ];
 
-        // Call the compareChoice function when the Display Listing button is selected.
+        // Enter the 'main' (make it go).
         document.getElementById("btnDisplayListing").onclick = compareChoice;
         
         // ======================== Create functions here =======================
@@ -208,7 +209,7 @@
 
         // Hide all three cards.
         function hideCards() {
-            document.getElementsByClassName('displayDiv').style.display = "none";
+            document.getElementsById('displayDiv').style.display = "none";
         }
 
         // Build the products table.
