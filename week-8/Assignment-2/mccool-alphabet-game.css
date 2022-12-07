@@ -1,0 +1,39 @@
+/* Use a border-box for every element */
+* {
+    box-sizing: border-box;}
+
+/* adjust the container to narrow the cards and align the return link */
+#container {
+    width: 600px;
+    margin: auto;}
+
+/* Adjust the app-header */
+.app-header {
+    text-align: center;
+    font-weight: 400;
+    margin: 20px auto 40px auto;}
+
+/* Add some space between the card title and input box */
+/* #txtMyChoice {
+    margin-top: 20px;} */
+
+/* Adjust the button */
+.btn {
+    border-radius: 5px;
+    width: 392px;
+    margin-top: 40px;
+    margin-bottom: 20px;}
+
+/* Add some space between the cards */
+.card {
+    margin-top: 30px;
+    margin-bottom: 30px;}
+
+#alphabetString,
+#resultDisplay {
+    color: #000;
+    text-align: center;
+    font-size: 28px;
+}
+
+
