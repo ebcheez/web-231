@@ -1,3 +1,21 @@
+/*
+===============================================================================
+; Title: Assignment 8 - Alphabet Game
+; Author: Professor Krasso
+; Date: 5 December, 2022
+; Modified by: Eric McCool
+; Description: This is Assignment 8.2.
+               Create an array to hold the alphabet, then display the letter's
+               number position in the alphabet, queried with error handling.
+; Works Cited: Web 231 Assignment 8 Javazon App, Web 231 Assignment 8 Alphabet Game,
+;              Flanagan, 2020 - JS The Definitive Guide, 
+;              W3Schools - JS Arrays, array method, array iteration, for, for/in
+;              Mozilla.org - Arrays,
+;              Google Fonts.
+; Notes: 
+===============================================================================
+*/
+
 /* Use a border-box for every element */
 * {
     box-sizing: border-box;}
@@ -33,7 +51,6 @@
 #resultDisplay {
     color: #000;
     text-align: center;
-    font-size: 28px;
-}
+    font-size: 28px;}
 
 
