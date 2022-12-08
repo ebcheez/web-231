@@ -77,19 +77,34 @@
 
         // ======================== The main program =======================
 
-        const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        let alphabetOutput = "";
+		// Declare global stuff.
+        const alphabet = [];
+		let asciiStart = 65;
+		let counter = 0;
+		let element = "";
+		let alphabetOutput = "";
+
+		// Fill the array with the alphabet from ascii codes.
+		while (counter < 26) {	// 26, because we start at 0, not 1.
+			element = String.fromCharCode(asciiStart + counter);
+			alphabet.push(element);
+			counter++;
+		}
+		
+		// Present the alphabet.
         for (x in alphabet) {
             alphabetOutput += alphabet[x] + ", ";
         }
         let sliced = alphabetOutput.slice(0, -2);
         document.getElementById("alphabetString").innerHTML = sliced;
+
+		// Make it go.
         document.getElementById("btnFindLetter").onclick = compareNumber;
 
 
         // ======================== The Functions =======================
 
-        // Compare the user number to the alphabet array
+        // Compare the user number to the alphabet array.
         function compareNumber() {
             let pos = document.getElementById("txtPosition").value;
             let letter = alphabet[pos - 1];
