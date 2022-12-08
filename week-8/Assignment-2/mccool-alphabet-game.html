@@ -94,8 +94,7 @@
         for (x in alphabet) {
             alphabetOutput += alphabet[x] + ", ";
         }
-        let sliced = alphabetOutput.slice(0, -2);
-        document.getElementById("alphabetString").innerHTML = sliced;
+        document.getElementById("alphabetString").innerHTML = alphabetOutput.slice(0, -2);
 
 	// Make it go.
         document.getElementById("btnFindLetter").onclick = compareNumber;
