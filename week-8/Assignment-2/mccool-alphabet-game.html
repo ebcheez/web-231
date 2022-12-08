@@ -75,9 +75,7 @@
 
                                 <!-- The main script. -->
     <script>
-
         // ======================== The main program =======================
-
 	// Declare global stuff.
         const alphabet = [];
 	let asciiStart = 65;
@@ -85,7 +83,7 @@
 	let element = "";
 	let alphabetOutput = "";
 
-	// Fill the array with the alphabet from ascii codes because why not?
+	// Fill the array with the alphabet from ascii codes for fun.
 	while (counter < 26) {	// 26, because we start at 0, not 1.
 	    element = String.fromCharCode(asciiStart + counter);
 	    alphabet.push(element);
@@ -104,7 +102,6 @@
 
 
         // ======================== The Functions =======================
-
         // Compare the user number to the alphabet array.
         function compareNumber() {
             let pos = document.getElementById("txtPosition").value;
@@ -119,6 +116,7 @@
             return;
         }
     </script><!-- Don't forget this closing tag, Eric -->
+	
 </body>
 </html>
 
