@@ -1,0 +1,121 @@
+<!--
+===============================================================================
+; Title: Assignment 8 - Alphabet Game
+; Author: Professor Krasso
+; Date: 5 December, 2022
+; Modified by: Eric McCool
+; Description: This is Assignment 8.2.
+               Create an array to hold the alphabet, then display the letter's
+               number position in the alphabet, queried with error handling.
+; Works Cited: Web 231 Assignment 8 Javazon App, Web 231 Assignment 8 Alphabet Game,
+;              Flanagan, 2020 - JS The Definitive Guide, 
+;              W3Schools - JS Arrays, array method, array iteration, for, for/in
+;              Mozilla.org - Arrays,
+;              Google Fonts.
+; Notes: 
+===============================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../global.css" type="text/css">
+    <link rel="stylesheet" href="mccool-alphabet-game.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    <title>WEB 231 - Enterprise JavaScript I</title>
+</head>
+
+				<!-- The body of the page -->
+<body>
+    <div id="container">
+        <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+
+        <!-- Get the letter selection from the user. -->
+        <div id="get-option">
+
+            <!-- The input card. -->
+            <div class="card">
+                <h1 class="card-title">Alphabet Number Form</h1>
+                <div class="card-content">
+                    <label for="theChoice" id="txtMyChoice">Alphabet Letter Position:</label>
+                    <input type="text" name="theChoice" id="txtPosition" class="input" value=""> 
+                    <button class="btn btn-primary" id="btnFindLetter">Find Letter</button>
+                </div>
+            </div><!-- End of the input card.-->
+
+            <!-- Return to the course landing page. -->    
+            <div id="return-link">
+                <a href="https://ebcheez.github.io/web-231/" class="return-home">Return</a>
+            </div>
+
+        </div><!-- End of the get-option div. -->
+
+        <!-- Create a div to hold the area where the cards will be displayed. -->
+        <div id="alphabet">
+
+            <!-- The alphabet output card. -->
+            <div class="card" id="alphabetCard">
+                <div class="card-title">Letters in the Alphabet</div>
+                <div class="card-content" id="alphabetString"></div>
+            </div><!-- End of the alphabet output card. -->
+
+            <!-- The results output card. -->
+            <div class="card" id="resultsCard">
+                <div class="card-title">Results</div>
+                <div class="card-content" id="resultDisplay"></div> 
+            </div><!-- End of the results output card. -->
+
+        </div><!-- End of the alphabet div -->
+    </div><!-- End of the container <div> -->
+
+
+                                <!-- The main script. -->
+    <script>
+        // ======================== The main program =======================
+	// Declare global stuff.
+        const alphabet = [];
+	let asciiStart = 65; // 'A' is ascii code 65
+	let counter = 0;
+	let element = "";
+	let alphabetOutput = "";
+
+	// Fill the array with the alphabet from ascii codes.
+	while (counter < 26) {	// 26, because we start at 0, not 1.
+	    element = String.fromCharCode(asciiStart + counter);
+	    alphabet.push(element);
+	    counter++;
+	}
+		
+	// Present the alphabet.
+        for (x in alphabet) {
+            alphabetOutput += alphabet[x] + ", ";
+        }
+        document.getElementById("alphabetString").innerHTML = alphabetOutput.slice(0, -2);
+
+	// Make it go.
+        document.getElementById("btnFindLetter").onclick = compareNumber;
+
+
+        // ======================== The Functions =======================
+        // Compare the user number to the alphabet array.
+        function compareNumber() {
+            let pos = document.getElementById("txtPosition").value;
+            let letter = alphabet[pos - 1];
+            if (letter != undefined) {
+                document.getElementById("resultDisplay").innerHTML = 
+                    letter + " is at position " + pos + " in the alphabet.";
+            } else {
+                document.getElementById("resultDisplay").innerHTML = 
+                    "There are not " + pos + " letters in the alphabet";
+            }
+            return;
+        }
+    </script><!-- Don't forget this closing tag, ever -->
+	
+</body>
+</html>
+
