@@ -33,6 +33,7 @@
 
 /* Adjust the button */
 .btn {
+    margin: auto;
     border-radius: 5px;
     width: 392px;
     margin-top: 40px;
@@ -43,10 +44,9 @@
     margin-top: 30px;
     margin-bottom: 30px;}
 
-#alphabetString,
-#resultDisplay {
-    color: #000;
+.player-card {
     text-align: center;
-    font-size: 28px;}
+}
+
 
 
