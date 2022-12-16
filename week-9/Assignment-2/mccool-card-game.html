@@ -1,4 +1,4 @@
-d
+
 <!--
 ===============================================================================
 ; Title: Assignment 9 - Card Game
@@ -32,8 +32,6 @@ d
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
-    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
     <title>WEB 231 - Enterprise JavaScript I</title>
 </head>
 
@@ -84,22 +82,19 @@ d
         // ======================== Classes =======================
         class Card {
             // let pic = "https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css";
-            img = document.createElement('IMG');
-            heart = "images/card-heart.svg";
-            diamond = "images/card-diamond.svg";
-            club = "images/card-club.svg";
-            spade = "images/card-spade.svg";
+            heart= "images/cardHeart.png";
+            diamond = "images/cardDiamond.png";
+            club = "images/cardClub.png";
+            spade = "images/cardSpade.png";
             card = "";
-            cardOutputWithIcon = ;
-            // pic = "";
+            cardOutputWithIcon = "";
 
             constructor(face, suit) {
-                // this.suit = suit;
+                this.suit = suit;
                 this.card = face, suit;
                 console.log(this.card); // returns card argument object
 
                 // the for loop is in the Dealer class
-                // for (this.suit of this.card) {
                 switch (this.card.suit) {
                     case "Hearts":
                         this.cardOutputWithIcon += 
@@ -118,39 +113,43 @@ d
                             this.buildPlayingCard(this.card, this.spade, "black");
                         break;
                     default:
-                        document.getElementById("shuffledDeck").innerHTML = "oops";
+                        document.getElementById("card-title").innerHTML = "oops";
 
                 }
                 //}
-                console.log(this.cardOutputWithIcon); // returns null
-                return this.cardOutputWithIcon; 
+                console.log(this.cardOutputWithIcon); // returns undefined
+                return; 
                 
             }
 
             buildPlayingCard(card, suitIcon, suitColor) { // eliminated faceColor parameter
                 // this just displays the file name, but the color is right
+                let value = card.face;
+                // console.log(value);
                 let faceHolder = document.getElementById("card-title");
                 let iconHolder = document.getElementById("suitIcon")
-                
-                let icon = `<span class="suitIcon" style="color: ${suitColor}">${suitIcon}</span>`;
-                let value = `<div class="card-title" style="color: ${suitColor}">${card.face}</div>`;
 
-                iconHolder.innerHTML = icon;
-                faceHolder.innerHTML = value;
+                faceHolder.innerHTML = `<div class="card-title" style="color: ${suitColor}">${card.face}</div>`;
 
-                document.getElementById("card-title").innerHTML = this.cardOutputWithIcon;
+                iconHolder.innerHTML = `<span class="suitIcon" style="color: ${suitColor}">${suitIcon}</span>`;
+
+
+                document.getElementById("card-title").innerHTML = Card.cardOutputWithIcon;
+
+                return;
 
                 //============= second try ==============
+                // let img = document.createElement('IMG');
                 // let newSpan = document.createElement ('span');
-                // newSpan.setAttribute('class', 'card-content');
+                // newSpan.setAttribute('class', "suitIcon");
                 // document.getElementById("suitIcon").appendChild(newSpan);
                 // let image = document.createElement("img");
                 // image.src = suitIcon;
                 // newSpan.appendChild(image);
-
-                return;
+                // return newSpan;
             }
         } // end class Card
+
 
         class Dealer {
             CARD_COUNT = 52;
@@ -172,6 +171,7 @@ d
             }
 
             shuffle() {
+                let bone = {};
                 let nextCard = "";
                 for (let i = 0; i < this.CARD_COUNT; i++) {
                     let secondCard = Math.floor(Math.random() * this.CARD_COUNT);
@@ -181,9 +181,9 @@ d
                 }
                 console.log(this.cards); // returns the shuffled array
 
-                let card;
-                for (this.card in this.cards) {
-                    let nextCard = new Card(this.cards[this.card]);
+                // deal the cards
+                for (this.bone of this.cards) {
+                    nextCard = new Card(this.bone);
                 }
                 return;
             }
