@@ -78,7 +78,7 @@
 
                             <!-- The main script. -->
     <script>
-        // import { mdiCardClub } from '@mdi/js';
+
         // ======================== Classes =======================
         class Card {
             // let pic = "https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css";
@@ -119,10 +119,22 @@
                 //}
                 console.log(this.cardOutputWithIcon); // returns undefined
                 return; 
-                
-            }
+            } // end of class constructor
 
-            buildPlayingCard(card, suitIcon, suitColor) { // eliminated faceColor parameter
+
+            buildPlayingCard(card, suitIcon, faceColor, suitColor) { 
+
+                // =========== first try ==================
+                // return `<div class="card player-card">
+                //         <div class="card-title" style="text-align: left; font-size: 20px; padding-left: 10px; 
+                //             color: ${faceColor};">${card.face}</div>
+                //         <div class="card-content style="font-size: 28px; padding-bottom: 25px;">
+                //         <span class="${suitIcon}" style="color: ${suitColor};"></span>
+                //         </div>
+                //         </div>`;
+            
+
+                // ============ second try =================
                 // this just displays the file name, but the color is right
                 let value = card.face;
                 // console.log(value);
@@ -130,15 +142,13 @@
                 let iconHolder = document.getElementById("suitIcon")
 
                 faceHolder.innerHTML = `<div class="card-title" style="color: ${suitColor}">${card.face}</div>`;
-
                 iconHolder.innerHTML = `<span class="suitIcon" style="color: ${suitColor}">${suitIcon}</span>`;
-
 
                 document.getElementById("card-title").innerHTML = Card.cardOutputWithIcon;
 
                 return;
 
-                //============= second try ==============
+                //============= third try ==============
                 // let img = document.createElement('IMG');
                 // let newSpan = document.createElement ('span');
                 // newSpan.setAttribute('class', "suitIcon");
@@ -147,7 +157,9 @@
                 // image.src = suitIcon;
                 // newSpan.appendChild(image);
                 // return newSpan;
-            }
+
+            } // end of buildPlayingCard
+
         } // end class Card
 
 
@@ -160,6 +172,7 @@
             constructor() {
                 this.getDeckOfCards();
                 console.log(this.cards); // shows unshuffled array
+                this.dealCards();
 
             }
             
@@ -180,13 +193,15 @@
                     this.cards[secondCard] = tempCard;
                 }
                 console.log(this.cards); // returns the shuffled array
+            }
 
-                // deal the cards
+            dealCards() {
                 for (this.bone of this.cards) {
                     nextCard = new Card(this.bone);
                 }
                 return;
             }
+            
         } // end class Dealer
 
 
