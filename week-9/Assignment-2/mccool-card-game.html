@@ -171,7 +171,6 @@
             constructor() {
                 this.getDeckOfCards();
                 console.log(this.cards); // shows unshuffled array
-                this.dealCards();
             }
             
             getDeckOfCards() {
@@ -191,9 +190,8 @@
                     this.cards[secondCard] = tempCard;
                 }
                 console.log(this.cards); // returns the shuffled array
-            }
 
-            dealCards() {
+                // deal the cards
                 for (this.bone of this.cards) {
                     nextCard = new Card(this.bone);
                 }
