@@ -26,7 +26,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="global.css" type="text/css">
+    <link rel="stylesheet" href="../../global.css" type="text/css">
     <link rel="stylesheet" href="mccool-card-game.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,9 +114,8 @@
                         break;
                     default:
                         document.getElementById("card-title").innerHTML = "oops";
-
                 }
-                //}
+
                 console.log(this.cardOutputWithIcon); // returns undefined
                 return; 
             } // end of class constructor
@@ -173,7 +172,6 @@
                 this.getDeckOfCards();
                 console.log(this.cards); // shows unshuffled array
                 this.dealCards();
-
             }
             
             getDeckOfCards() {
@@ -201,14 +199,13 @@
                 }
                 return;
             }
-            
         } // end class Dealer
-
 
 
         // ====================== Main program =======================
         // Make it go
         let dealer = new Dealer();
+
     </script><!-- End of script. -->
 	
 </body>
